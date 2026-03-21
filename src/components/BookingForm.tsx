@@ -41,6 +41,7 @@ const BookingForm = () => {
 
     const payload = {
       name: name.trim(),
+      birthdate: birthdate.trim(),
       phone: phone.trim(),
       preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
       timestamp: new Date().toISOString(),

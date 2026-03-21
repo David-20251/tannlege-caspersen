@@ -14,6 +14,7 @@ const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/26914796/upwziz
 const BookingForm = () => {
   const { toast } = useToast();
   const [name, setName] = useState("");
+  const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
   const [preferredDate, setPreferredDate] = useState<Date>();
   const [submitted, setSubmitted] = useState(false);

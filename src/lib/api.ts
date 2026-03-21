@@ -14,10 +14,17 @@ export interface LeadPayload {
  * Future: add SMS trigger, Supabase insert, etc.
  */
 export async function submitLead(payload: LeadPayload): Promise<void> {
-  await fetch(ZAPIER_WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    mode: "no-cors",
-    body: JSON.stringify(payload),
-  });
+  try {
+    console.log("Sending lead:", payload);
+    await fetch(ZAPIER_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
+      body: JSON.stringify(payload),
+    });
+    console.log("Webhook sent (no response due to no-cors)");
+  } catch (error) {
+    console.error("Webhook error:", error);
+    throw error;
+  }
 }

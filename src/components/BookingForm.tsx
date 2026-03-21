@@ -9,7 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
-const ZAPIER_WEBHOOK_URL = ""; // User will paste their Zapier webhook URL here
+const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/26914796/upwzizb/";
 
 const BookingForm = () => {
   const { toast } = useToast();

@@ -51,6 +51,10 @@ const BookingForm = () => {
         source: "SmartLook Optikk – 40% kampanje",
       });
 
+      setName("");
+      setBirthdate("");
+      setPhone("");
+      setPreferredDate(undefined);
       setSubmitted(true);
       toast({
         title: "Takk for din bestilling!",

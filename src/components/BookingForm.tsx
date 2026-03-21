@@ -25,6 +25,8 @@ const BookingForm = () => {
     const newErrors: Record<string, string> = {};
     if (!name.trim() || name.trim().split(/\s+/).length < 2)
       newErrors.name = "Vennligst fyll inn fornavn og etternavn";
+    if (!birthdate.trim() || !/^\d{6}$/.test(birthdate.trim()))
+      newErrors.birthdate = "Fyll inn fødselsdato med 6 siffer (f.eks. 261277)";
     if (!phone.trim() || !/^(\+?\d{8,15})$/.test(phone.replace(/\s/g, "")))
       newErrors.phone = "Vennligst fyll inn et gyldig telefonnummer";
     setErrors(newErrors);

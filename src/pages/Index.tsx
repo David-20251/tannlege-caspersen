@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Eye, Clock, Award, Phone, MapPin, Mail, Glasses, ShieldCheck } from "lucide-react";
+import { Eye, Clock, Award, Phone, MapPin, Mail, Glasses, ShieldCheck, Scan, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-optik.jpg";
 import BookingForm from "@/components/BookingForm";
 

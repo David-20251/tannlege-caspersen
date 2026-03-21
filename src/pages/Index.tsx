@@ -132,15 +132,17 @@ const Index = () => {
                 Hva vi hjelper deg med
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                SmartLook Optikk tilbyr et bredt utvalg av tjenester for din synshelse
+                SmartLook Optikk tilbyr faglig trygghet og personlig service – fra synsprøve til avansert øyehelse
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { icon: Glasses, title: "Synsundersøkelse", desc: "Grundig synsprøve og førerkortattest med skreddersydde tester tilpasset dine behov" },
-                { icon: Eye, title: "OCT-A netthinneundersøkelse", desc: "Avansert netthinnescanning for tidlig oppdagelse av øyesykdommer" },
-                { icon: ShieldCheck, title: "Brilletilpasning", desc: "Personlig veiledning for å finne de perfekte brillene til deg – nå med 40% rabatt på glass" },
-                { icon: Clock, title: "Rask service", desc: "Vi sender bekreftelse innen to arbeidsdager og finner en tid som passer for deg" },
+                { icon: Glasses, title: "Synsundersøkelse og førerkort", desc: "Skreddersydde tester med høy nøyaktighet – tilpasset dine daglige behov og krav til førerkort" },
+                { icon: Scan, title: "OCT-A netthinneundersøkelse", desc: "Verdensledende Revo FC130 gir detaljerte tverrsnitt og blodstrømskart over netthinnen – oppdager glaukom, AMD og diabetesretinopati før du merker symptomene" },
+                { icon: Eye, title: "Samsynsvurdering", desc: "Kartlegging og tiltak ved dobbeltsyn, hodepine eller lese- og konsentrasjonsvansker" },
+                { icon: Droplets, title: "Tørre øyne-utredning", desc: "Avansert analyse og anbefaling av lindrende tiltak for tørre eller irriterte øyne" },
+                { icon: ShieldCheck, title: "Brilletilpasning med 40% rabatt", desc: "Personlig veiledning for å finne de perfekte brillene – nå med 40% på alle brilleglass" },
+                { icon: Clock, title: "Rask henvisning til øyelege", desc: "Ved mistanke om øyesykdom henviser vi deg raskt med full dokumentasjon fra våre målinger" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">

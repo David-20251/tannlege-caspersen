@@ -118,6 +118,20 @@ const BookingForm = () => {
       </div>
       <div>
         <Input
+          type="text"
+          inputMode="numeric"
+          placeholder="Fødselsdato (ddmmåå, f.eks. 261277)"
+          value={birthdate}
+          onChange={(e) => setBirthdate(e.target.value.replace(/\D/g, "").slice(0, 6))}
+          className="h-12 bg-background border-border text-base"
+          maxLength={6}
+        />
+        {errors.birthdate && (
+          <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>
+        )}
+      </div>
+      <div>
+        <Input
           type="tel"
           placeholder="Telefonnummer"
           value={phone}

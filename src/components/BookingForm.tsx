@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
 import { CalendarIcon, CheckCircle2, Loader2 } from "lucide-react";
@@ -8,8 +8,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-
-const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/26914796/upwzizb/";
+import { submitLead } from "@/lib/api";
 
 const BookingForm = () => {
   const { toast } = useToast();
@@ -20,6 +19,7 @@ const BookingForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const isSubmitting = useRef(false);
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -27,41 +27,34 @@ const BookingForm = () => {
       newErrors.name = "Vennligst fyll inn fornavn og etternavn";
     if (!birthdate.trim() || !/^\d{6}$/.test(birthdate.trim()))
       newErrors.birthdate = "Fyll inn fødselsdato med 6 siffer (f.eks. 261277)";
-    if (!phone.trim() || !/^(\+?\d{8,15})$/.test(phone.replace(/\s/g, "")))
-      newErrors.phone = "Vennligst fyll inn et gyldig telefonnummer";
+    if (!phone.trim() || !/^\d{8}$/.test(phone.replace(/\s/g, "")))
+      newErrors.phone = "Vennligst fyll inn et gyldig 8-sifret telefonnummer";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting.current) return;
     if (!validate()) return;
 
+    isSubmitting.current = true;
     setIsLoading(true);
 
-    const payload = {
-      name: name.trim(),
-      birthdate: birthdate.trim(),
-      phone: phone.trim(),
-      preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
-      timestamp: new Date().toISOString(),
-      source: "SmartLook Optikk – 40% kampanje",
-    };
-
     try {
-      if (ZAPIER_WEBHOOK_URL) {
-        await fetch(ZAPIER_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          mode: "no-cors",
-          body: JSON.stringify(payload),
-        });
-      }
+      await submitLead({
+        name: name.trim(),
+        birthdate: birthdate.trim(),
+        phone: phone.trim(),
+        preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
+        timestamp: new Date().toISOString(),
+        source: "SmartLook Optikk – 40% kampanje",
+      });
 
       setSubmitted(true);
       toast({
         title: "Takk for din bestilling!",
-        description: "Vi kontakter deg snart for å bekrefte timen.",
+        description: "Vi kontakter deg innen 24 timer.",
       });
     } catch (error) {
       console.error("Error sending webhook:", error);
@@ -72,6 +65,7 @@ const BookingForm = () => {
       });
     } finally {
       setIsLoading(false);
+      isSubmitting.current = false;
     }
   };
 
@@ -85,7 +79,7 @@ const BookingForm = () => {
           Takk, {name.split(" ")[0]}!
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto leading-relaxed mb-6">
-          Din forespørsel er registrert. Vi kontakter deg snart for å bekrefte din time.
+          Vi kontakter deg innen 24 timer for å bekrefte din time.
           {preferredDate && (
             <> Du ønsker time <strong>{format(preferredDate, "EEEE d. MMMM", { locale: nb })}</strong>.</>
           )}
@@ -133,7 +127,7 @@ const BookingForm = () => {
       <div>
         <Input
           type="tel"
-          placeholder="Telefonnummer"
+          placeholder="Telefonnummer (8 siffer)"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           className="h-12 bg-background border-border text-base"

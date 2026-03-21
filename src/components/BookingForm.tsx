@@ -14,6 +14,7 @@ const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/26914796/upwziz
 const BookingForm = () => {
   const { toast } = useToast();
   const [name, setName] = useState("");
+  const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
   const [preferredDate, setPreferredDate] = useState<Date>();
   const [submitted, setSubmitted] = useState(false);
@@ -24,6 +25,8 @@ const BookingForm = () => {
     const newErrors: Record<string, string> = {};
     if (!name.trim() || name.trim().split(/\s+/).length < 2)
       newErrors.name = "Vennligst fyll inn fornavn og etternavn";
+    if (!birthdate.trim() || !/^\d{6}$/.test(birthdate.trim()))
+      newErrors.birthdate = "Fyll inn fødselsdato med 6 siffer (f.eks. 261277)";
     if (!phone.trim() || !/^(\+?\d{8,15})$/.test(phone.replace(/\s/g, "")))
       newErrors.phone = "Vennligst fyll inn et gyldig telefonnummer";
     setErrors(newErrors);
@@ -38,6 +41,7 @@ const BookingForm = () => {
 
     const payload = {
       name: name.trim(),
+      birthdate: birthdate.trim(),
       phone: phone.trim(),
       preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
       timestamp: new Date().toISOString(),
@@ -110,6 +114,20 @@ const BookingForm = () => {
         />
         {errors.name && (
           <p className="text-destructive text-sm mt-1">{errors.name}</p>
+        )}
+      </div>
+      <div>
+        <Input
+          type="text"
+          inputMode="numeric"
+          placeholder="Fødselsdato (ddmmåå, f.eks. 261277)"
+          value={birthdate}
+          onChange={(e) => setBirthdate(e.target.value.replace(/\D/g, "").slice(0, 6))}
+          className="h-12 bg-background border-border text-base"
+          maxLength={6}
+        />
+        {errors.birthdate && (
+          <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>
         )}
       </div>
       <div>

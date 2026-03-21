@@ -38,6 +38,15 @@ const BookingForm = () => {
     if (isSubmitting.current) return;
     if (!validate()) return;
 
+    if (!navigator.onLine) {
+      toast({
+        title: "Ingen internettforbindelse",
+        description: "Sjekk tilkoblingen din og prøv igjen.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     isSubmitting.current = true;
     setIsLoading(true);
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
-import logo from "@/assets/smartlook-logo.webp";
 
 interface StickyHeaderProps {
   onBookClick: () => void;
@@ -25,12 +24,10 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <img
-          src={logo}
-          alt="SmartLook Optikk logo"
-          className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"}`}
-        />
-        
+        <span className="text-xl font-bold tracking-tight text-foreground">
+          SmartLook <span className="text-primary">Optikk</span>
+        </span>
+
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
           <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">

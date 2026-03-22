@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Menu, X } from "lucide-react";
 
 interface StickyHeaderProps {
   onBookClick: () => void;
@@ -7,48 +7,71 @@ interface StickyHeaderProps {
 
 const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handle = () => setScrolled(window.scrollY > 20);
+    const handle = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handle, { passive: true });
     return () => window.removeEventListener("scroll", handle);
   }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "py-3 px-6 bg-card/95 backdrop-blur-md shadow-md shadow-foreground/[0.04] border-b border-border"
-          : "py-4 px-6 bg-card border-b border-border"
+          ? "py-3 bg-background/90 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-border/50"
+          : "py-5 bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <span className="text-xl font-bold tracking-tight text-foreground">
           SmartLook <span className="text-primary">Optikk</span>
         </span>
-        <div className="flex items-center gap-4">
-          <a
-            href="tel:48608939"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
+        
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-6">
+          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Phone className="w-4 h-4" />
-            <span className="hidden sm:inline">48 60 89 39</span>
+            48 60 89 39
           </a>
-          <a
-            href="mailto:post@smartlookoptikk.no"
-            className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Mail className="w-4 h-4" />
-            <span>post@smartlookoptikk.no</span>
+            post@smartlookoptikk.no
           </a>
           <button
             onClick={onBookClick}
-            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all duration-200 shadow-sm"
+            className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-primary/20"
           >
-            Bestill time
+            Bestill synsprøve
           </button>
         </div>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-foreground p-2"
+        >
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 space-y-4 animate-fade-up">
+          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Phone className="w-4 h-4" /> 48 60 89 39
+          </a>
+          <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Mail className="w-4 h-4" /> post@smartlookoptikk.no
+          </a>
+          <button
+            onClick={() => { onBookClick(); setMenuOpen(false); }}
+            className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold"
+          >
+            Bestill synsprøve
+          </button>
+        </div>
+      )}
     </header>
   );
 };

@@ -43,42 +43,33 @@ const Reviews = () => {
   const ref = useScrollReveal();
 
   return (
-    <section className="py-16 md:py-24 bg-card">
+    <section className="py-20 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={ref} className="opacity-0">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+          <div className="text-center mb-14">
+            <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Kundeomtaler</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
               Hva kundene sier
             </h2>
-            <p className="text-muted-foreground text-lg">
-              Over 500 fornøyde kunder på Sørumsand
-            </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
               <div
                 key={review.name}
-                className="bg-background rounded-xl p-6 shadow-md shadow-foreground/[0.03] border border-border/60 hover:shadow-lg transition-shadow duration-300"
-                style={{ animationDelay: `${i * 80}ms` }}
+                className="glass-card rounded-xl p-6 hover:border-primary/20 transition-all duration-300 group"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="flex gap-0.5 mb-3">
+                <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className="w-4 h-4 fill-accent text-accent"
-                    />
+                    <Star key={j} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-sm text-foreground leading-relaxed mb-4">
+                <p className="text-sm text-foreground/80 leading-relaxed mb-5">
                   "{review.text}"
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-foreground">
-                    {review.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {review.date}
-                  </span>
+                <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                  <span className="text-sm font-semibold text-foreground">{review.name}</span>
+                  <span className="text-xs text-muted-foreground">{review.date}</span>
                 </div>
               </div>
             ))}

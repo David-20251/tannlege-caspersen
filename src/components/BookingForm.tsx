@@ -72,7 +72,6 @@ const BookingForm = () => {
       setBirthdate("");
       setPhone("");
       setPreferredDate(undefined);
-
       navigate("/takk");
     } catch (error) {
       console.error("Error sending webhook:", error);
@@ -94,12 +93,10 @@ const BookingForm = () => {
           placeholder="Fornavn og etternavn"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="h-12 bg-background border-border text-base"
+          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={100}
         />
-        {errors.name && (
-          <p className="text-destructive text-sm mt-1">{errors.name}</p>
-        )}
+        {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
       </div>
       <div>
         <Input
@@ -108,12 +105,10 @@ const BookingForm = () => {
           placeholder="Fødselsdato (ddmmåå, f.eks. 261277)"
           value={birthdate}
           onChange={(e) => setBirthdate(e.target.value.replace(/\D/g, "").slice(0, 6))}
-          className="h-12 bg-background border-border text-base"
+          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={6}
         />
-        {errors.birthdate && (
-          <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>
-        )}
+        {errors.birthdate && <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>}
       </div>
       <div>
         <Input
@@ -122,22 +117,19 @@ const BookingForm = () => {
           placeholder="Telefonnummer (8 siffer)"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="h-12 bg-background border-border text-base"
+          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={20}
         />
-        {errors.phone && (
-          <p className="text-destructive text-sm mt-1">{errors.phone}</p>
-        )}
+        {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone}</p>}
       </div>
 
-      {/* Preferred date picker */}
       <div>
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               className={cn(
-                "w-full h-12 justify-start text-left font-normal text-base",
+                "w-full h-12 justify-start text-left font-normal text-base bg-secondary/50 border-border",
                 !preferredDate && "text-muted-foreground"
               )}
             >
@@ -171,7 +163,7 @@ const BookingForm = () => {
         type="submit"
         size="lg"
         disabled={isLoading}
-        className="w-full h-14 text-lg font-semibold bg-accent text-accent-foreground hover:bg-accent/90 active:scale-[0.97] transition-all duration-200"
+        className="w-full h-14 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-primary/25"
       >
         {isLoading ? (
           <>

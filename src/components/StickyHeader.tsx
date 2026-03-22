@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
-import logo from "@/assets/smartlook-logo.webp";
 
 interface StickyHeaderProps {
   onBookClick: () => void;

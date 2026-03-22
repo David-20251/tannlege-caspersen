@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { Eye, Clock, Award, Phone, MapPin, Mail, Glasses, ShieldCheck, Scan, Droplets } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Eye, Clock, Award, Phone, MapPin, Glasses, ShieldCheck, Scan, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-optik.jpg";
 import BookingForm from "@/components/BookingForm";
 import StickyHeader from "@/components/StickyHeader";
@@ -35,6 +35,20 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
   );
 };
 
+const useParallax = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handle = () => {
+      if (!ref.current) return;
+      const y = window.scrollY * 0.3;
+      ref.current.style.transform = `translateY(${y}px) scale(1.1)`;
+    };
+    window.addEventListener("scroll", handle, { passive: true });
+    return () => window.removeEventListener("scroll", handle);
+  }, []);
+  return ref;
+};
+
 const features = [
   { icon: Eye, title: "Grundig synsprøve", desc: "Skreddersydd synsundersøkelse med høy nøyaktighet – tilpasset dine daglige behov" },
   { icon: Award, title: "40% på brilleglass", desc: "Spar stort på kvalitetsglass fra ledende produsenter. Tilbudet gjelder så lenge det varer!" },
@@ -43,45 +57,60 @@ const features = [
 
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
+  const parallaxRef = useParallax();
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background overflow-x-hidden">
       <StickyHeader onBookClick={scrollToForm} />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="animate-fade-up">
-              <span className="offer-badge mb-6">Årets beste tilbud!</span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-[1.1] tracking-tight mt-4 mb-5">
-                40% rabatt på alle brilleglass
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
-                Hos SmartLook Optikk på Sørumsand får du faglig trygghet og personlig service med optiker David Guldager. Bestill synsprøve og nye briller – og spar stort med vårt eksklusive tilbud.
-              </p>
-              <p className="text-sm text-muted-foreground mb-8 flex items-center gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
-                Tverrveien 1, 1920 Sørumsand
-              </p>
+      {/* Hero — fullscreen with parallax bg */}
+      <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center justify-center overflow-hidden">
+        <div ref={parallaxRef} className="absolute inset-0 -top-20 -bottom-20">
+          <img
+            src={heroImage}
+            alt="Moderne brillebutikk hos SmartLook Optikk på Sørumsand"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+        </div>
+
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <div className="animate-fade-up">
+            <p className="text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-foreground/70 mb-6">
+              SmartLook Optikk · Autorisert optiker · Sørumsand
+            </p>
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-[0.95] tracking-tight mb-6">
+              <span className="text-gradient">–40%</span>
+              <br />
+              på alle brilleglass
+            </h1>
+            <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl mx-auto leading-relaxed">
+              Bestill synsprøve og nye briller – og spar stort med vårt eksklusive tilbud.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={scrollToForm}
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-accent/20"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-xl shadow-primary/25 glow-accent"
               >
-                Bestill synsprøve nå →
+                Bestill synsprøve nå
               </button>
+              <a
+                href="tel:48608939"
+                className="flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors duration-200 text-sm"
+              >
+                <Phone className="w-4 h-4" />
+                Ring 48 60 89 39
+              </a>
             </div>
-            <div className="animate-fade-up" style={{ animationDelay: "150ms" }}>
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-foreground/5">
-                <img
-                  src={heroImage}
-                  alt="Moderne brillebutikk hos SmartLook Optikk på Sørumsand"
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                  loading="eager"
-                />
-              </div>
-            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 rounded-full border-2 border-foreground/20 flex items-start justify-center p-1.5">
+            <div className="w-1.5 h-2.5 bg-primary rounded-full" />
           </div>
         </div>
       </section>
@@ -90,20 +119,26 @@ const Index = () => {
       <TrustBar />
 
       {/* Features */}
-      <section className="py-16 md:py-24" style={{ background: "var(--warm-gradient)" }}>
+      <section className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6">
           <Section>
-            <div className="grid sm:grid-cols-3 gap-8">
+            <div className="text-center mb-14">
+              <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Våre tjenester</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+                Hvorfor velge oss
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6">
               {features.map((f, i) => (
                 <div
                   key={f.title}
-                  className="bg-card rounded-xl p-6 shadow-md shadow-foreground/[0.03] hover:shadow-lg hover:shadow-foreground/[0.06] transition-shadow duration-300"
-                  style={{ animationDelay: `${i * 80}ms` }}
+                  className="glass-card rounded-xl p-7 hover:border-primary/20 transition-all duration-300 group"
+                  style={{ animationDelay: `${i * 100}ms` }}
                 >
-                  <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <f.icon className="w-5 h-5 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                    <f.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
+                  <h3 className="font-semibold text-foreground mb-2 text-lg">{f.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                 </div>
               ))}
@@ -113,28 +148,26 @@ const Index = () => {
       </section>
 
       {/* What you get */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="max-w-3xl mx-auto px-6">
+      <section className="py-20 md:py-28 bg-card/50">
+        <div className="max-w-4xl mx-auto px-6">
           <Section>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+            <div className="text-center mb-14">
+              <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Komplett øyehelse</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
                 Hva vi hjelper deg med
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                SmartLook Optikk tilbyr faglig trygghet og personlig service – fra synsprøve til avansert øyehelse
-              </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-5">
               {[
                 { icon: Glasses, title: "Synsundersøkelse og førerkort", desc: "Skreddersydde tester med høy nøyaktighet – tilpasset dine daglige behov og krav til førerkort" },
-                { icon: Scan, title: "OCT-A netthinneundersøkelse", desc: "Verdensledende Revo FC130 gir detaljerte tverrsnitt og blodstrømskart over netthinnen – oppdager glaukom, AMD og diabetesretinopati før du merker symptomene" },
+                { icon: Scan, title: "OCT-A netthinneundersøkelse", desc: "Verdensledende Revo FC130 gir detaljerte tverrsnitt og blodstrømskart over netthinnen" },
                 { icon: Eye, title: "Samsynsvurdering", desc: "Kartlegging og tiltak ved dobbeltsyn, hodepine eller lese- og konsentrasjonsvansker" },
                 { icon: Droplets, title: "Tørre øyne-utredning", desc: "Avansert analyse og anbefaling av lindrende tiltak for tørre eller irriterte øyne" },
                 { icon: ShieldCheck, title: "Brilletilpasning med 40% rabatt", desc: "Personlig veiledning for å finne de perfekte brillene – nå med 40% på alle brilleglass" },
-                { icon: Clock, title: "Rask henvisning til øyelege", desc: "Ved mistanke om øyesykdom henviser vi deg raskt med full dokumentasjon fra våre målinger" },
+                { icon: Clock, title: "Rask henvisning til øyelege", desc: "Ved mistanke om øyesykdom henviser vi deg raskt med full dokumentasjon" },
               ].map((item) => (
-                <div key={item.title} className="flex gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div key={item.title} className="flex gap-4 p-5 rounded-xl glass-card hover:border-primary/20 transition-all duration-300 group">
+                  <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -149,26 +182,27 @@ const Index = () => {
       </section>
 
       {/* How it works */}
-      <section className="py-16 md:py-24" style={{ background: "var(--warm-gradient)" }}>
+      <section className="py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Section>
+            <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Enkel prosess</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
               Slik fungerer det
             </h2>
-            <p className="text-muted-foreground mb-12 text-lg">
-              Tre enkle steg til dine nye briller med 40% rabatt på glass
+            <p className="text-muted-foreground mb-14 text-lg">
+              Tre enkle steg til dine nye briller med 40% rabatt
             </p>
-            <div className="grid sm:grid-cols-3 gap-8 text-left">
+            <div className="grid sm:grid-cols-3 gap-8">
               {[
                 { step: "1", title: "Meld din interesse", desc: "Fyll inn navn og telefonnummer i skjemaet nedenfor" },
                 { step: "2", title: "Motta bekreftelse", desc: "Du får en SMS med bekreftelse og vi kontakter deg snart" },
                 { step: "3", title: "Kom til synsprøve", desc: "Vi finner en passende tid for din grundige synsundersøkelse" },
-              ].map((item) => (
+              ].map((item, i) => (
                 <div key={item.step} className="flex flex-col items-center text-center">
-                  <span className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mb-4">
+                  <span className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center font-bold text-2xl mb-5 border border-primary/20">
                     {item.step}
                   </span>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-foreground mb-2 text-lg">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -177,21 +211,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Reviews / Social Proof */}
+      {/* Reviews */}
       <Reviews />
 
       {/* Booking Form */}
-      <section ref={formRef} className="py-16 md:py-24" style={{ background: "var(--warm-gradient)" }}>
+      <section ref={formRef} className="py-20 md:py-28 bg-card/50">
         <div className="max-w-2xl mx-auto px-6">
           <Section>
-            <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl shadow-foreground/[0.04] border border-border">
+            <div className="glass-card rounded-2xl p-8 md:p-12 glow-accent">
               <div className="text-center mb-8">
                 <span className="offer-badge mb-4">Spar 40% på brilleglass</span>
                 <h2 className="text-3xl font-bold text-foreground mt-4 mb-2 tracking-tight">
                   Bestill din synsprøve
                 </h2>
                 <p className="text-muted-foreground">
-                  Fyll inn skjemaet, så tar vi kontakt med deg for å avtale en time. Normalt innen to arbeidsdager.
+                  Fyll inn skjemaet, så tar vi kontakt med deg for å avtale en time.
                 </p>
               </div>
               <BookingForm />
@@ -201,18 +235,18 @@ const Index = () => {
       </section>
 
       {/* Contact info */}
-      <section className="py-12 md:py-16 bg-card">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
           <Section>
             <div className="grid sm:grid-cols-3 gap-8 text-center">
-              <div>
-                <Phone className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="font-semibold text-foreground">Ring oss</p>
+              <div className="glass-card rounded-xl p-6">
+                <Phone className="w-5 h-5 text-primary mx-auto mb-3" />
+                <p className="font-semibold text-foreground mb-1">Ring oss</p>
                 <a href="tel:48608939" className="text-sm text-muted-foreground hover:text-primary transition-colors">48 60 89 39</a>
               </div>
-              <div>
-                <MapPin className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="font-semibold text-foreground">Besøk oss</p>
+              <div className="glass-card rounded-xl p-6">
+                <MapPin className="w-5 h-5 text-primary mx-auto mb-3" />
+                <p className="font-semibold text-foreground mb-1">Besøk oss</p>
                 <a
                   href="https://maps.google.com/?q=59.987272,11.246747"
                   target="_blank"
@@ -222,9 +256,9 @@ const Index = () => {
                   Tverrveien 1, 1920 Sørumsand
                 </a>
               </div>
-              <div>
-                <Clock className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="font-semibold text-foreground">Åpningstider</p>
+              <div className="glass-card rounded-xl p-6">
+                <Clock className="w-5 h-5 text-primary mx-auto mb-3" />
+                <p className="font-semibold text-foreground mb-1">Åpningstider</p>
                 <p className="text-sm text-muted-foreground">Man–Fre 10–17 · Lør 11–15</p>
               </div>
             </div>
@@ -233,7 +267,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border bg-card">
+      <footer className="py-8 px-6 border-t border-border/50">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} SmartLook Optikk — Tverrveien 1, 1920 Sørumsand —{" "}

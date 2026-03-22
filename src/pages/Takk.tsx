@@ -2,34 +2,22 @@ import { CheckCircle2, Phone, MapPin, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
-const useScrollReveal = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    el.classList.add("section-fade-in");
-  }, []);
-  return ref;
-};
-
 const Takk = () => {
-  const ref = useScrollReveal();
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    ref.current?.classList.add("section-fade-in");
   }, []);
 
   return (
     <main className="min-h-screen bg-background">
-      <header className="py-4 px-6 border-b border-border bg-card">
+      <header className="py-4 px-6 border-b border-border/50">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link to="/" className="text-xl font-bold tracking-tight text-foreground">
             SmartLook <span className="text-primary">Optikk</span>
           </Link>
-          <a
-            href="tel:48608939"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
             <span>48 60 89 39</span>
           </a>
@@ -38,7 +26,7 @@ const Takk = () => {
 
       <div className="max-w-xl mx-auto px-6 py-20 md:py-32">
         <div ref={ref} className="opacity-0 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-8 glow-accent">
             <CheckCircle2 className="w-10 h-10 text-primary" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
@@ -51,7 +39,7 @@ const Takk = () => {
             Du vil motta en SMS-bekreftelse på telefonen din.
           </p>
 
-          <div className="bg-card rounded-xl p-6 border border-border mb-8 text-left">
+          <div className="glass-card rounded-xl p-6 mb-8 text-left">
             <h2 className="font-semibold text-foreground mb-4">Hva skjer videre?</h2>
             <ol className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3">
@@ -70,10 +58,7 @@ const Takk = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="w-4 h-4" />
               Tilbake til forsiden
             </Link>

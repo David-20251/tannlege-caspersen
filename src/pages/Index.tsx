@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import { Eye, Clock, Award, Phone, MapPin, Mail, Glasses, ShieldCheck, Scan, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-optik.jpg";
 import BookingForm from "@/components/BookingForm";
+import StickyHeader from "@/components/StickyHeader";
+import TrustBar from "@/components/TrustBar";
+import Reviews from "@/components/Reviews";
 
 const useScrollReveal = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,24 +47,7 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="py-4 px-6 border-b border-border bg-card">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <span className="text-xl font-bold tracking-tight text-foreground">
-            SmartLook <span className="text-primary">Optikk</span>
-          </span>
-          <div className="flex items-center gap-4">
-            <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">48 60 89 39</span>
-            </a>
-            <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <Mail className="w-4 h-4" />
-              <span className="hidden md:inline">post@smartlookoptikk.no</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <StickyHeader onBookClick={scrollToForm} />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -81,7 +67,7 @@ const Index = () => {
               </p>
               <button
                 onClick={scrollToForm}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-primary/20"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-accent/20"
               >
                 Bestill synsprøve nå →
               </button>
@@ -99,6 +85,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Trust Bar */}
+      <TrustBar />
 
       {/* Features */}
       <section className="py-16 md:py-24" style={{ background: "var(--warm-gradient)" }}>
@@ -188,11 +177,14 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reviews / Social Proof */}
+      <Reviews />
+
       {/* Booking Form */}
-      <section ref={formRef} className="py-16 md:py-24 bg-card">
+      <section ref={formRef} className="py-16 md:py-24" style={{ background: "var(--warm-gradient)" }}>
         <div className="max-w-2xl mx-auto px-6">
           <Section>
-            <div className="bg-background rounded-2xl p-8 md:p-12 shadow-xl shadow-foreground/[0.04] border border-border">
+            <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl shadow-foreground/[0.04] border border-border">
               <div className="text-center mb-8">
                 <span className="offer-badge mb-4">Spar 40% på brilleglass</span>
                 <h2 className="text-3xl font-bold text-foreground mt-4 mb-2 tracking-tight">
@@ -209,7 +201,7 @@ const Index = () => {
       </section>
 
       {/* Contact info */}
-      <section className="py-12 md:py-16" style={{ background: "var(--warm-gradient)" }}>
+      <section className="py-12 md:py-16 bg-card">
         <div className="max-w-5xl mx-auto px-6">
           <Section>
             <div className="grid sm:grid-cols-3 gap-8 text-center">

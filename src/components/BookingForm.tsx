@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
-import { CalendarIcon, CheckCircle2, Loader2 } from "lucide-react";
+import { CalendarIcon, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
@@ -9,14 +10,15 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/api";
+import { trackEvent } from "@/lib/analytics";
 
 const BookingForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
   const [preferredDate, setPreferredDate] = useState<Date>();
-  const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const isSubmitting = useRef(false);
@@ -60,15 +62,18 @@ const BookingForm = () => {
         source: "SmartLook Optikk – 40% kampanje",
       });
 
+      trackEvent("Lead", {
+        name: name.trim(),
+        phone: phone.trim(),
+        source: "SmartLook Optikk – 40% kampanje",
+      });
+
       setName("");
       setBirthdate("");
       setPhone("");
       setPreferredDate(undefined);
-      setSubmitted(true);
-      toast({
-        title: "Takk for din bestilling!",
-        description: "Vi kontakter deg innen 24 timer.",
-      });
+
+      navigate("/takk");
     } catch (error) {
       console.error("Error sending webhook:", error);
       toast({
@@ -81,33 +86,6 @@ const BookingForm = () => {
       isSubmitting.current = false;
     }
   };
-
-  if (submitted) {
-    return (
-      <div className="text-center py-12 animate-scale-in">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-          <CheckCircle2 className="w-8 h-8 text-primary" />
-        </div>
-        <h3 className="text-2xl font-bold mb-3 text-foreground">
-          Takk, {name.split(" ")[0]}!
-        </h3>
-        <p className="text-muted-foreground max-w-md mx-auto leading-relaxed mb-6">
-          Vi kontakter deg innen 24 timer for å bekrefte din time.
-          {preferredDate && (
-            <> Du ønsker time <strong>{format(preferredDate, "EEEE d. MMMM", { locale: nb })}</strong>.</>
-          )}
-        </p>
-        <a
-          href="https://www.smartlookoptikk.no/bestill-synstest?single=true&current_optician=5176"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-        >
-          Eller bestill time direkte på smartlookoptikk.no →
-        </a>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
@@ -140,6 +118,7 @@ const BookingForm = () => {
       <div>
         <Input
           type="tel"
+          inputMode="numeric"
           placeholder="Telefonnummer (8 siffer)"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
@@ -192,7 +171,7 @@ const BookingForm = () => {
         type="submit"
         size="lg"
         disabled={isLoading}
-        className="w-full h-14 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 active:scale-[0.97] transition-all duration-200"
+        className="w-full h-14 text-lg font-semibold bg-accent text-accent-foreground hover:bg-accent/90 active:scale-[0.97] transition-all duration-200"
       >
         {isLoading ? (
           <>

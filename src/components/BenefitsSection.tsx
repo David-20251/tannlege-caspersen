@@ -84,15 +84,16 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
                 </svg>
               </div>
 
-              <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent">
+              <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent text-center">
                 <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder så lenge det varer.
-              </p>
-              <button onClick={onBookClick} className="btn-cta px-8 py-4 text-lg w-full sm:w-auto">
-                Bestill synstest
-              </button>
-              <p className="text-xs text-muted-foreground mt-4">Ingen binding · Gratis parkering</p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder så lenge det varer.
+                </p>
+                <button onClick={onBookClick} className="btn-cta px-8 py-4 text-lg w-full sm:w-auto">
+                  Bestill synstest
+                </button>
+                <p className="text-xs text-muted-foreground mt-4">Ingen binding · Gratis parkering</p>
+              </div>
             </div>
           </div>
         </div>

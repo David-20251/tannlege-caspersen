@@ -27,11 +27,6 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
 
     <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
       <div className="max-w-xl animate-fade-up">
-        <div className="inline-flex items-center gap-2 bg-background/60 backdrop-blur-md text-secondary px-4 py-2 rounded-full text-sm font-medium mb-8 border border-border/50">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          40% rabatt på brilleglass
-        </div>
-
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
           <span className="text-gradient">40% rabatt</span>
           <br />

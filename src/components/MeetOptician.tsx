@@ -1,5 +1,4 @@
 import butikkImg from "@/assets/butikk.webp";
-import butikkImg from "@/assets/butikk.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const MeetOptician = () => {
@@ -18,31 +17,29 @@ const MeetOptician = () => {
             </h2>
           </div>
 
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <p className="text-foreground/80 text-lg leading-relaxed">
+              David Guldager er autorisert optiker med lang erfaring innen synsundersøkelser og øyehelse. 
+              Hos SmartLook Optikk på Sørumsand får du en grundig og personlig oppfølging – 
+              fra synsprøve til ferdig brille.
+            </p>
+            <p className="text-foreground/60 leading-relaxed">
+              Med avansert utstyr som OCT-A netthinneundersøkelse og moderne 
+              brilletilpasning, sørger David for at du får den beste synsopplevelsen. 
+              Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
+            </p>
 
-            <div className="space-y-6">
-              <p className="text-foreground/80 text-lg leading-relaxed">
-                David Guldager er autorisert optiker med lang erfaring innen synsundersøkelser og øyehelse. 
-                Hos SmartLook Optikk på Sørumsand får du en grundig og personlig oppfølging – 
-                fra synsprøve til ferdig brille.
+            <div className="overflow-hidden rounded-xl mt-4">
+              <img
+                src={butikkImg}
+                alt="SmartLook Optikk butikk på Sørumsand"
+                className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-300"
+                loading="lazy"
+              />
+              <p className="text-xs text-muted-foreground mt-2 text-center">
+                Vår butikk i Tverrveien 1, Sørumsand
               </p>
-              <p className="text-foreground/60 leading-relaxed">
-                Med avansert utstyr som OCT-A netthinneundersøkelse og moderne 
-                brilletilpasning, sørger David for at du får den beste synsopplevelsen. 
-                Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
-              </p>
-
-              <div className="overflow-hidden rounded-xl mt-4">
-                <img
-                  src={butikkImg}
-                  alt="SmartLook Optikk butikk på Sørumsand"
-                  className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-300"
-                  loading="lazy"
-                />
-                <p className="text-xs text-muted-foreground mt-2 text-center">
-                  Vår butikk i Tverrveien 1, Sørumsand
-                </p>
-              </div>
+            </div>
           </div>
         </div>
       </div>

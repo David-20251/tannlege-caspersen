@@ -39,7 +39,7 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
         </div>
 
         <p className="text-lg text-foreground/70 mb-10 max-w-lg leading-relaxed">
-          Bestill synstest hos din lokale optiker på Sørumsand og spar stort ved kjøp av komplett brille.
+          Bestill synstest hos din lokale optiker på Sørumsand og spar stort ved kjøp av komplett brille. Tilbudet gjelder t.o.m. 11. april 2026.
         </p>
 
         <div className="flex flex-col sm:flex-row items-start gap-4 relative">

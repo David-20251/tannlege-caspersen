@@ -1,6 +1,6 @@
 import { ShieldCheck, Clock, Award, Heart } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-
+import AnimatedArrow from "@/components/AnimatedArrow";
 const benefits = [
   { icon: ShieldCheck, title: "Autorisert optiker", desc: "Faglig trygghet med David Guldager gjennom hele prosessen" },
   { icon: Clock, title: "Rask service", desc: "Kort ventetid og effektiv oppfølging fra bestilling til ferdig brille" },

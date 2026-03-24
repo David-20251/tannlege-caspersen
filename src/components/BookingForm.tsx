@@ -63,8 +63,6 @@ const BookingForm = () => {
       });
 
       trackEvent("Lead", {
-        name: name.trim(),
-        phone: phone.trim(),
         source: "SmartLook Optikk – 40% kampanje",
       });
 

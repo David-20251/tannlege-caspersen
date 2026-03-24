@@ -1,9 +1,9 @@
 /**
  * Analytics helper — fires events for future Facebook Pixel / GA integration.
- * Replace console.log with actual pixel/GA calls when ready.
  */
 export function trackEvent(eventName: string, data?: Record<string, unknown>) {
-  console.log(`[Analytics] ${eventName}`, data);
+  // Log event name only — no PII
+  console.log(`[Analytics] ${eventName}`);
 
   // Future: Facebook Pixel
   // if (typeof window.fbq === "function") {

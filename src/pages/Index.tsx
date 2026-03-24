@@ -47,7 +47,7 @@ const Index = () => {
               SmartLook Optikk · Sørumsand
             </p>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-[0.95] tracking-tight mb-6">
-              <span className="text-gradient">–40%</span><br />på alle brilleglass
+              <span className="text-gradient">–40%</span><br />på alle brilleglass<br /><span className="text-2xl md:text-3xl font-semibold text-foreground/60">ved kjøp av en komplett brille</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl mx-auto leading-relaxed">
               Bestill synsprøve og spar stort hos din lokale optiker.

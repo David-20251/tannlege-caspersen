@@ -30,9 +30,9 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a href="tel:63824000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Phone className="w-4 h-4" />
-            48 60 89 39
+            63 82 40 00
           </a>
           <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Mail className="w-4 h-4" />
@@ -58,8 +58,8 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 space-y-4 animate-fade-up">
-          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Phone className="w-4 h-4" /> 48 60 89 39
+          <a href="tel:63824000" className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Phone className="w-4 h-4" /> 63 82 40 00
           </a>
           <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground">
             <Mail className="w-4 h-4" /> post@smartlookoptikk.no

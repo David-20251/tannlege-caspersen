@@ -47,11 +47,11 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
             Bestill synstest
           </button>
           <a
-            href="tel:48608939"
+            href="tel:63824000"
             className="flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-4 rounded-xl hover:bg-background/40 backdrop-blur-sm"
           >
             <Phone className="w-5 h-5" />
-            <span className="font-medium">48 60 89 39</span>
+            <span className="font-medium">63 82 40 00</span>
           </a>
         </div>
       </div>

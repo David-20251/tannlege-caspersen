@@ -17,9 +17,9 @@ const Takk = () => {
           <Link to="/" className="text-xl font-bold tracking-tight text-foreground">
             SmartLook <span className="text-primary">Optikk</span>
           </Link>
-          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="tel:63824000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
-            <span>48 60 89 39</span>
+            <span>63 82 40 00</span>
           </a>
         </div>
       </header>

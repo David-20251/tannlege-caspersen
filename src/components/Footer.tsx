@@ -32,7 +32,7 @@ const Footer = () => {
               <div className="glass-card rounded-xl p-6">
                 <Clock className="w-5 h-5 text-primary mx-auto mb-3" />
                 <p className="font-bold text-foreground mb-1">Åpningstider</p>
-                <p className="text-sm text-muted-foreground">Man–Fre 10–17 · Lør 11–15</p>
+                <p className="text-sm text-muted-foreground">Man–Fre 10–17 · Tirs 10–19 · Lør 11–16</p>
               </div>
             </div>
           </div>

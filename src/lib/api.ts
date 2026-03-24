@@ -1,4 +1,4 @@
-const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/26914796/upwzizb/";
+import { supabase } from "@/integrations/supabase/client";
 
 export interface LeadPayload {
   name: string;
@@ -10,21 +10,15 @@ export interface LeadPayload {
 }
 
 /**
- * Send lead data to Zapier webhook.
- * Future: add SMS trigger, Supabase insert, etc.
+ * Send lead data via secure backend proxy.
  */
 export async function submitLead(payload: LeadPayload): Promise<void> {
-  try {
-    console.log("Sending lead:", payload);
-    await fetch(ZAPIER_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      mode: "no-cors",
-      body: JSON.stringify(payload),
-    });
-    console.log("Webhook sent (no response due to no-cors)");
-  } catch (error) {
-    console.error("Webhook error:", error);
+  const { data, error } = await supabase.functions.invoke("submit-lead", {
+    body: payload,
+  });
+
+  if (error) {
+    console.error("Lead submission failed");
     throw error;
   }
 }

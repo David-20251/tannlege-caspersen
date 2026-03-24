@@ -17,28 +17,27 @@ const MeetOptician = () => {
             </h2>
           </div>
 
-          <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-foreground/80 text-lg leading-relaxed">
-              David Guldager er autorisert optiker med lang erfaring innen synsundersøkelser og øyehelse. 
-              Hos SmartLook Optikk på Sørumsand får du en grundig og personlig oppfølging – 
-              fra synsprøve til ferdig brille.
-            </p>
-            <p className="text-foreground/60 leading-relaxed">
-              Med avansert utstyr som OCT-A netthinneundersøkelse og moderne 
-              brilletilpasning, sørger David for at du får den beste synsopplevelsen. 
-              Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
-            </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                David Guldager er autorisert optiker med lang erfaring innen synsundersøkelser og øyehelse. 
+                Hos SmartLook Optikk på Sørumsand får du en grundig og personlig oppfølging – 
+                fra synsprøve til ferdig brille.
+              </p>
+              <p className="text-foreground/60 leading-relaxed">
+                Med avansert utstyr som OCT-A netthinneundersøkelse og moderne 
+                brilletilpasning, sørger David for at du får den beste synsopplevelsen. 
+                Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
+              </p>
+            </div>
 
-            <div className="overflow-hidden rounded-xl mt-4">
+            <div className="overflow-hidden rounded-xl">
               <img
                 src={davidImg}
                 alt="Optiker David Guldager hos SmartLook Optikk"
-                className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-300"
+                className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
-              <p className="text-xs text-muted-foreground mt-2 text-center">
-                Vår butikk i Tverrveien 1, Sørumsand
-              </p>
             </div>
           </div>
         </div>

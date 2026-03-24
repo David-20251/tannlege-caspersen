@@ -1,4 +1,4 @@
-import butikkImg from "@/assets/butikk.webp";
+import davidImg from "@/assets/david.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const MeetOptician = () => {
@@ -31,8 +31,8 @@ const MeetOptician = () => {
 
             <div className="overflow-hidden rounded-xl mt-4">
               <img
-                src={butikkImg}
-                alt="SmartLook Optikk butikk på Sørumsand"
+                src={davidImg}
+                alt="Optiker David Guldager hos SmartLook Optikk"
                 className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />

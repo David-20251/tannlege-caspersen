@@ -28,27 +28,21 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
     <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
       <div className="max-w-xl animate-fade-up">
         {/* Headline */}
-        <div className="relative">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
-            <span className="text-gradient animate-pulse-glow">40% rabatt</span>
-            <br />
-            på alle brilleglass
-          </h1>
-
-          {/* Big arrow pointing directly at "40% rabatt" from the right */}
+        <div className="relative mb-2">
+          {/* Arrow above headline on mobile, to the right on desktop */}
           <svg
-            className="absolute -right-2 -top-10 w-[130px] h-[65px] sm:-right-6 sm:top-0 sm:w-[140px] sm:h-[60px] md:-right-28 md:top-2 md:w-[220px] md:h-[80px] block pointer-events-none hero-arrow-container"
-            viewBox="0 0 220 80"
+            className="relative mb-3 w-[180px] h-[70px] sm:absolute sm:mb-0 sm:-right-6 sm:-top-2 sm:w-[180px] sm:h-[70px] md:-right-32 md:-top-2 md:w-[260px] md:h-[90px] pointer-events-none hero-arrow-container"
+            viewBox="0 0 260 90"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             {/* "Se her!" badge */}
-            <rect x="120" y="0" rx="10" ry="10" width="96" height="32" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
+            <rect x="145" y="0" rx="12" ry="12" width="110" height="38" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
             <text
-              x="168"
-              y="22"
+              x="200"
+              y="26"
               fill="white"
-              fontSize="16"
+              fontSize="19"
               fontWeight="900"
               fontFamily="Inter, sans-serif"
               textAnchor="middle"
@@ -58,21 +52,27 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
             </text>
             {/* Thick arrow pointing left */}
             <path
-              d="M168 34C158 44 120 52 60 50"
+              d="M200 40C185 52 140 62 70 58"
               stroke="hsl(25, 95%, 53%)"
-              strokeWidth="6"
+              strokeWidth="7"
               strokeLinecap="round"
               className="hero-arrow-path-1"
             />
             <path
-              d="M74 38L56 50L74 62"
+              d="M84 44L62 58L84 72"
               stroke="hsl(25, 95%, 53%)"
-              strokeWidth="6"
+              strokeWidth="7"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="hero-arrow-tip-1"
             />
           </svg>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
+            <span className="text-gradient animate-pulse-glow">40% rabatt</span>
+            <br />
+            på alle brilleglass
+          </h1>
         </div>
 
         <p className="text-lg text-foreground/70 mb-10 max-w-lg leading-relaxed">

@@ -29,50 +29,41 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
       <div className="max-w-xl animate-fade-up">
         {/* Headline */}
         <div className="relative mb-2">
-          {/* Arrow above headline on mobile, to the right on desktop */}
-          <svg
-            className="relative mb-3 w-[180px] h-[70px] sm:absolute sm:mb-0 sm:-right-6 sm:-top-2 sm:w-[180px] sm:h-[70px] md:-right-32 md:-top-2 md:w-[260px] md:h-[90px] pointer-events-none hero-arrow-container"
-            viewBox="0 0 260 90"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* "Se her!" badge */}
-            <rect x="145" y="0" rx="12" ry="12" width="110" height="38" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
-            <text
-              x="200"
-              y="26"
-              fill="white"
-              fontSize="19"
-              fontWeight="900"
-              fontFamily="Inter, sans-serif"
-              textAnchor="middle"
-              className="hero-arrow-label-1"
-            >
-              Se her!
-            </text>
-            {/* Thick arrow pointing left */}
-            <path
-              d="M200 40C185 52 140 62 70 58"
-              stroke="hsl(25, 95%, 53%)"
-              strokeWidth="7"
-              strokeLinecap="round"
-              className="hero-arrow-path-1"
-            />
-            <path
-              d="M84 44L62 58L84 72"
-              stroke="hsl(25, 95%, 53%)"
-              strokeWidth="7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="hero-arrow-tip-1"
-            />
-          </svg>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
             <span className="text-gradient animate-pulse-glow">40% rabatt</span>
             <br />
             på alle brilleglass
           </h1>
+
+          {/* Elegant curved arrow with "Se her!" badge — sits below headline, pointing up */}
+          <div className="flex items-center gap-2 hero-arrow-container">
+            <svg
+              className="w-[160px] h-[50px] sm:w-[200px] sm:h-[55px] md:w-[240px] md:h-[60px] pointer-events-none"
+              viewBox="0 0 240 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Arrow curving upward-left toward the headline */}
+              <path
+                d="M230 50C200 48 140 40 80 20"
+                stroke="hsl(25, 95%, 53%)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                className="hero-arrow-path-1"
+              />
+              <path
+                d="M92 10L78 18L96 26"
+                stroke="hsl(25, 95%, 53%)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="hero-arrow-tip-1"
+              />
+            </svg>
+            <span className="inline-flex items-center bg-primary text-primary-foreground font-extrabold text-sm sm:text-base px-4 py-2 rounded-full shadow-lg hero-arrow-label-badge animate-pulse-glow whitespace-nowrap">
+              👆 Se her!
+            </span>
+          </div>
         </div>
 
         <p className="text-lg text-foreground/70 mb-10 max-w-lg leading-relaxed">

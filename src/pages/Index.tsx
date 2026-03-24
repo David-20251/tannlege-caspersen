@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Eye, Clock, Award, Phone, MapPin, Glasses, ShieldCheck, Scan, Droplets } from "lucide-react";
-import heroImage from "@/assets/hero-optik.jpg";
+import heroImage from "@/assets/david.jpg";
 import octScan from "@/assets/oct-scan.png";
 import BookingForm from "@/components/BookingForm";
 import StickyHeader from "@/components/StickyHeader";

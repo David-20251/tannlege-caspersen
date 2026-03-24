@@ -43,7 +43,6 @@ const MeetOptician = () => {
                   Vår butikk i Tverrveien 1, Sørumsand
                 </p>
               </div>
-            </div>
           </div>
         </div>
       </div>

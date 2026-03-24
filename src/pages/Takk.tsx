@@ -63,7 +63,7 @@ const Takk = () => {
               Tilbake til forsiden
             </Link>
             <a
-              href="https://maps.google.com/?q=59.987272,11.246747"
+              href="https://www.google.com/maps/search/?api=1&query=59.987272,11.246747"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-primary hover:underline"

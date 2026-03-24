@@ -1,5 +1,3 @@
-import { supabase } from "@/integrations/supabase/client";
-
 export interface LeadPayload {
   name: string;
   birthdate: string;
@@ -13,12 +11,16 @@ export interface LeadPayload {
  * Send lead data via secure backend proxy.
  */
 export async function submitLead(payload: LeadPayload): Promise<void> {
-  const { data, error } = await supabase.functions.invoke("submit-lead", {
-    body: payload,
+  const response = await fetch("/api/submit-lead", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
   });
 
-  if (error) {
+  if (!response.ok) {
     console.error("Lead submission failed");
-    throw error;
+    throw new Error(`Lead submission failed with status ${response.status}`);
   }
 }

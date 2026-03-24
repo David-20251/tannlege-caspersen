@@ -77,7 +77,7 @@ const BookingForm = () => {
       console.error("Error sending webhook:", error);
       toast({
         title: "Noe gikk galt",
-        description: "Vennligst prøv igjen eller ring oss på 48 60 89 39.",
+        description: "Vennligst prøv igjen eller ring oss på 63 82 40 00.",
         variant: "destructive",
       });
     } finally {

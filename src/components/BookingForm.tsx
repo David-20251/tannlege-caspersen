@@ -88,48 +88,48 @@ const BookingForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-      <div>
+      <div className="input-focus rounded-lg">
         <Input
           placeholder="Fornavn og etternavn"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
+          className="h-12 bg-muted/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={100}
         />
         {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
       </div>
-      <div>
+      <div className="input-focus rounded-lg">
         <Input
           type="text"
           inputMode="numeric"
           placeholder="Fødselsdato (ddmmåå, f.eks. 261277)"
           value={birthdate}
           onChange={(e) => setBirthdate(e.target.value.replace(/\D/g, "").slice(0, 6))}
-          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
+          className="h-12 bg-muted/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={6}
         />
         {errors.birthdate && <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>}
       </div>
-      <div>
+      <div className="input-focus rounded-lg">
         <Input
           type="tel"
           inputMode="numeric"
           placeholder="Telefonnummer (8 siffer)"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="h-12 bg-secondary/50 border-border text-base text-foreground placeholder:text-muted-foreground"
+          className="h-12 bg-muted/50 border-border text-base text-foreground placeholder:text-muted-foreground"
           maxLength={20}
         />
         {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone}</p>}
       </div>
 
-      <div>
+      <div className="input-focus rounded-lg">
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               className={cn(
-                "w-full h-12 justify-start text-left font-normal text-base bg-secondary/50 border-border",
+                "w-full h-12 justify-start text-left font-normal text-base bg-muted/50 border-border",
                 !preferredDate && "text-muted-foreground"
               )}
             >
@@ -164,7 +164,7 @@ const BookingForm = () => {
         type="submit"
         size="lg"
         disabled={isLoading}
-        className="w-full h-14 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-primary/25"
+        className="w-full h-14 text-lg font-semibold btn-cta"
       >
         {isLoading ? (
           <>

@@ -35,34 +35,34 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
             på alle brilleglass
           </h1>
 
-          {/* Elegant curved arrow with "Se her!" badge — sits below headline, pointing up */}
-          <div className="flex items-center gap-2 hero-arrow-container">
+          {/* Animated arrow + "Se her!" badge pointing up at 40% rabatt */}
+          <div className="flex items-center gap-3 hero-arrow-container">
+            <span className="inline-flex items-center bg-primary text-primary-foreground font-extrabold text-base sm:text-lg px-5 py-2.5 rounded-full shadow-lg hero-arrow-label-badge whitespace-nowrap">
+              Se her! 👆
+            </span>
             <svg
-              className="w-[160px] h-[50px] sm:w-[200px] sm:h-[55px] md:w-[240px] md:h-[60px] pointer-events-none"
-              viewBox="0 0 240 60"
+              className="w-[100px] h-[60px] sm:w-[140px] sm:h-[70px] md:w-[180px] md:h-[80px] pointer-events-none -ml-2"
+              viewBox="0 0 180 80"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Arrow curving upward-left toward the headline */}
+              {/* Curved arrow going up-left toward the headline */}
               <path
-                d="M230 50C200 48 140 40 80 20"
+                d="M170 70C140 65 90 50 40 20"
                 stroke="hsl(25, 95%, 53%)"
-                strokeWidth="4"
+                strokeWidth="5"
                 strokeLinecap="round"
                 className="hero-arrow-path-1"
               />
               <path
-                d="M92 10L78 18L96 26"
+                d="M52 8L36 18L56 28"
                 stroke="hsl(25, 95%, 53%)"
-                strokeWidth="4"
+                strokeWidth="5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="hero-arrow-tip-1"
               />
             </svg>
-            <span className="inline-flex items-center bg-primary text-primary-foreground font-extrabold text-sm sm:text-base px-4 py-2 rounded-full shadow-lg hero-arrow-label-badge animate-pulse-glow whitespace-nowrap">
-              👆 Se her!
-            </span>
           </div>
         </div>
 

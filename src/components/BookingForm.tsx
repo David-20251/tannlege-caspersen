@@ -139,11 +139,12 @@ const BookingForm = () => {
                 : "Velg ønsket dato (valgfritt)"}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto p-0" align="start">
+          <PopoverContent className="w-auto p-0 z-50" align="start" side="bottom" sideOffset={4}>
             <Calendar
               mode="single"
               selected={preferredDate}
               onSelect={setPreferredDate}
+              locale={nb}
               disabled={(date) => {
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);

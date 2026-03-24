@@ -175,13 +175,28 @@
   50% { transform: translateY(-12px) rotate(-1deg); }
 }
 
-@keyframes arrowDraw {
-  from { stroke-dashoffset: 100; }
-  to { stroke-dashoffset: 0; }
+@keyframes arrowDrawH {
+  from { stroke-dasharray: 0 100; }
+  to { stroke-dasharray: 100 0; }
+}
+
+@keyframes arrowDrawCurve {
+  from { stroke-dasharray: 0 80; }
+  to { stroke-dasharray: 80 0; }
 }
 
 @keyframes arrowHead {
-  0%, 60% { opacity: 0; }
+  0%, 70% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes arrowHeadDelayed {
+  0%, 80% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes arrowFade {
+  0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
@@ -201,14 +216,29 @@
   96% { transform: scale(0.98); }
 }
 
-.animate-arrow-draw {
-  stroke-dashoffset: 100;
-  animation: arrowDraw 1.2s ease-out 0.5s forwards;
+.animate-arrow-draw-h {
+  stroke-dasharray: 0 100;
+  animation: arrowDrawH 0.8s ease-out 0.3s forwards;
+}
+
+.animate-arrow-draw-curve {
+  stroke-dasharray: 0 80;
+  animation: arrowDrawCurve 0.8s ease-out 0.9s forwards;
 }
 
 .animate-arrow-head {
   opacity: 0;
-  animation: arrowHead 0.4s ease-out 1.5s forwards;
+  animation: arrowHead 0.4s ease-out 1s forwards;
+}
+
+.animate-arrow-head-delayed {
+  opacity: 0;
+  animation: arrowHeadDelayed 0.4s ease-out 1.6s forwards;
+}
+
+.animate-arrow-fade {
+  opacity: 0;
+  animation: arrowFade 0.3s ease-out 0.2s forwards;
 }
 
 .animate-bounce-subtle {

@@ -45,37 +45,41 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
             <div className="relative glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
               {/* Big animated arrow pointing at "Spar 40%" */}
               <svg
-                className="absolute -left-8 md:-left-20 -top-10 md:-top-12 w-[120px] h-[100px] md:w-[160px] md:h-[120px] pointer-events-none hidden sm:block"
-                viewBox="0 0 160 120"
+                className="absolute -left-10 md:-left-24 -top-14 md:-top-16 w-[150px] h-[130px] md:w-[200px] md:h-[160px] pointer-events-none hidden sm:block benefit-arrow-container"
+                viewBox="0 0 200 160"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M10 15C50 5 100 10 130 40C145 55 148 75 140 95"
-                  stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  className="benefit-arrow-path"
-                />
-                <path
-                  d="M130 88L140 98L150 88"
-                  stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="benefit-arrow-tip"
-                />
+                {/* "Tilbud!" label — bigger, bolder */}
+                <rect x="2" y="2" rx="8" ry="8" width="72" height="30" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
                 <text
-                  x="5"
-                  y="12"
-                  fill="hsl(25, 95%, 53%)"
-                  fontSize="12"
-                  fontWeight="700"
+                  x="38"
+                  y="22"
+                  fill="white"
+                  fontSize="15"
+                  fontWeight="800"
                   fontFamily="Inter, sans-serif"
+                  textAnchor="middle"
                   className="benefit-arrow-label"
                 >
                   Tilbud!
                 </text>
+                {/* Thicker curvy arrow path */}
+                <path
+                  d="M38 34C50 50 80 60 110 70C135 78 155 95 155 120"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  className="benefit-arrow-path"
+                />
+                <path
+                  d="M145 112L155 124L165 112"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="benefit-arrow-tip"
+                />
               </svg>
 
               <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>

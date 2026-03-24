@@ -25,7 +25,10 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('cf-connecting-ip') ||
+    'unknown';
 
   if (isRateLimited(ip)) {
     return new Response(JSON.stringify({ error: 'Too many requests' }), {
@@ -37,7 +40,6 @@ Deno.serve(async (req) => {
   try {
     const payload = await req.json();
 
-    // Basic input validation
     if (!payload.phone || typeof payload.phone !== 'string' || payload.phone.replace(/\s/g, '').length < 8) {
       return new Response(JSON.stringify({ error: 'Invalid phone' }), {
         status: 400,
@@ -53,11 +55,24 @@ Deno.serve(async (req) => {
       });
     }
 
-    await fetch(webhookUrl, {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    const zapResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeout);
+
+    if (!zapResponse.ok) {
+      return new Response(JSON.stringify({ error: 'Upstream error' }), {
+        status: 502,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

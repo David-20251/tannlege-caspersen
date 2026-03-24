@@ -33,9 +33,9 @@ const AnimatedArrow = ({ label }: AnimatedArrowProps) => (
       >
         {label}
       </text>
-      {/* Arrow shaft straight down */}
+      {/* Curvy arrow shaft */}
       <path
-        d="M120 46L120 125"
+        d="M120 46C125 65 135 80 130 95C125 110 115 120 120 140"
         stroke="hsl(25, 95%, 53%)"
         strokeWidth="6"
         strokeLinecap="round"
@@ -43,7 +43,7 @@ const AnimatedArrow = ({ label }: AnimatedArrowProps) => (
       />
       {/* Arrow tip */}
       <path
-        d="M106 114L120 136L134 114"
+        d="M108 130L120 148L132 130"
         stroke="hsl(25, 95%, 53%)"
         strokeWidth="6"
         strokeLinecap="round"

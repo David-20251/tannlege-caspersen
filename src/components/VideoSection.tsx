@@ -13,13 +13,13 @@ const VideoSection = () => {
         <div ref={ref} className="opacity-0">
           <div className="text-center mb-10">
             <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">
-              Se vår video
+              Video
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
-              Trenger du nye briller?
+              Spar 40% på brilleglass
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              Få et innblikk i SmartLook Optikk sine tilbud og tjenester – akkurat nå med 40% rabatt på alle brilleglass.
+              Se vårt eksklusive tilbud – akkurat nå får du 40% rabatt på alle brilleglass ved kjøp av komplett brille hos SmartLook Optikk.
             </p>
           </div>
 

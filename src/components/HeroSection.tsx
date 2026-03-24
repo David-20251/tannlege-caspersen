@@ -35,39 +35,43 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
             på alle brilleglass
           </h1>
 
-          {/* Big hand-drawn arrow curving toward "40% rabatt" from the right */}
+          {/* Big arrow pointing directly at "40% rabatt" from the right */}
           <svg
-            className="absolute -right-8 md:-right-32 -top-6 md:-top-4 w-[120px] h-[100px] md:w-[180px] md:h-[140px] hidden sm:block pointer-events-none"
-            viewBox="0 0 180 140"
+            className="absolute -right-6 md:-right-28 top-0 md:top-2 w-[140px] h-[60px] md:w-[220px] md:h-[80px] hidden sm:block pointer-events-none hero-arrow-container"
+            viewBox="0 0 220 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M170 20C140 10 100 8 70 30C50 45 40 65 45 85"
-              stroke="hsl(25, 95%, 53%)"
-              strokeWidth="3"
-              strokeLinecap="round"
-              className="hero-arrow-path-1"
-            />
-            <path
-              d="M35 76L45 88L55 76"
-              stroke="hsl(25, 95%, 53%)"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="hero-arrow-tip-1"
-            />
+            {/* "Se her!" badge */}
+            <rect x="130" y="2" rx="8" ry="8" width="80" height="28" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
             <text
-              x="110"
-              y="12"
-              fill="hsl(25, 95%, 53%)"
-              fontSize="13"
-              fontWeight="700"
+              x="170"
+              y="21"
+              fill="white"
+              fontSize="14"
+              fontWeight="800"
               fontFamily="Inter, sans-serif"
+              textAnchor="middle"
               className="hero-arrow-label-1"
             >
               Se her!
             </text>
+            {/* Thick horizontal arrow pointing left toward the text */}
+            <path
+              d="M170 32C160 42 120 50 60 48"
+              stroke="hsl(25, 95%, 53%)"
+              strokeWidth="5"
+              strokeLinecap="round"
+              className="hero-arrow-path-1"
+            />
+            <path
+              d="M72 38L58 48L72 58"
+              stroke="hsl(25, 95%, 53%)"
+              strokeWidth="5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="hero-arrow-tip-1"
+            />
           </svg>
         </div>
 

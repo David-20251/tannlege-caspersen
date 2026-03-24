@@ -41,50 +41,48 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
               </div>
             </div>
 
-            {/* Right: CTA card */}
-            <div className="relative text-center">
-              {/* Animated arrow — in-flow on mobile (centered above card), absolute on sm+ */}
-              <div className="flex justify-center mb-4 sm:mb-0 sm:absolute sm:-left-12 sm:-top-16 md:-left-28 md:-top-20 sm:block">
-                <svg
-                  className="w-[140px] h-[100px] sm:w-[180px] sm:h-[140px] md:w-[240px] md:h-[180px] pointer-events-none benefit-arrow-container"
-                  viewBox="0 0 240 180"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            {/* Right: CTA card with arrow above */}
+            <div className="flex flex-col items-center">
+              {/* Animated arrow — always centered above the card */}
+              <svg
+                className="w-[120px] h-[80px] sm:w-[160px] sm:h-[100px] md:w-[200px] md:h-[120px] pointer-events-none benefit-arrow-container mb-2"
+                viewBox="0 0 200 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* "Tilbud!" badge */}
+                <rect x="45" y="0" rx="12" ry="12" width="110" height="40" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
+                <text
+                  x="100"
+                  y="28"
+                  fill="white"
+                  fontSize="20"
+                  fontWeight="900"
+                  fontFamily="Inter, sans-serif"
+                  textAnchor="middle"
+                  className="benefit-arrow-label"
                 >
-                  {/* "Tilbud!" badge */}
-                  <rect x="65" y="0" rx="12" ry="12" width="110" height="40" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
-                  <text
-                    x="120"
-                    y="28"
-                    fill="white"
-                    fontSize="20"
-                    fontWeight="900"
-                    fontFamily="Inter, sans-serif"
-                    textAnchor="middle"
-                    className="benefit-arrow-label"
-                  >
-                    Tilbud!
-                  </text>
-                  {/* Arrow pointing straight down */}
-                  <path
-                    d="M120 42C120 70 120 100 120 150"
-                    stroke="hsl(25, 95%, 53%)"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    className="benefit-arrow-path"
-                  />
-                  <path
-                    d="M108 140L120 158L132 140"
-                    stroke="hsl(25, 95%, 53%)"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="benefit-arrow-tip"
-                  />
-                </svg>
-              </div>
+                  Tilbud!
+                </text>
+                {/* Arrow pointing straight down */}
+                <path
+                  d="M100 42L100 95"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  className="benefit-arrow-path"
+                />
+                <path
+                  d="M88 86L100 104L112 86"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="benefit-arrow-tip"
+                />
+              </svg>
 
-              <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent text-center">
+              <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent text-center w-full">
                 <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder så lenge det varer.

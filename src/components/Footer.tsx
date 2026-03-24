@@ -13,8 +13,8 @@ const Footer = () => {
               <div className="glass-card rounded-xl p-6">
                 <Phone className="w-5 h-5 text-primary mx-auto mb-3" />
                 <p className="font-bold text-foreground mb-1">Ring oss</p>
-                <a href="tel:48608939" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                  48 60 89 39
+                <a href="tel:63824000" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                  63 82 40 00
                 </a>
               </div>
               <div className="glass-card rounded-xl p-6">

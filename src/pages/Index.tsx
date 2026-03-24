@@ -133,7 +133,6 @@ const Index = () => {
                 { icon: Glasses, title: "Synsundersøkelse og førerkort", desc: "Skreddersydde tester med høy nøyaktighet – tilpasset dine daglige behov og krav til førerkort" },
                 { icon: Eye, title: "Samsynsvurdering", desc: "Kartlegging og tiltak ved dobbeltsyn, hodepine eller lese- og konsentrasjonsvansker" },
                 { icon: Droplets, title: "Tørre øyne-utredning", desc: "Avansert analyse og anbefaling av lindrende tiltak for tørre eller irriterte øyne" },
-                { icon: ShieldCheck, title: "Brilletilpasning med 40% rabatt", desc: "Personlig veiledning for å finne de perfekte brillene – nå med 40% på alle brilleglass" },
                 { icon: Clock, title: "Rask henvisning til øyelege", desc: "Ved mistanke om øyesykdom henviser vi deg raskt med full dokumentasjon" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 p-5 rounded-xl glass-card hover:border-primary/20 transition-all duration-200">

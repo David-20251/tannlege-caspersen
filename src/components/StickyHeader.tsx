@@ -19,12 +19,12 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "py-2 bg-background/90 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-border/50"
+          ? "py-2 bg-background/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-b border-border/50"
           : "py-4 bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <span className="text-xl font-bold tracking-tight text-foreground">
+        <span className="text-xl font-extrabold tracking-tight text-foreground">
           SmartLook <span className="text-primary">Optikk</span>
         </span>
 
@@ -40,9 +40,9 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
           </a>
           <button
             onClick={onBookClick}
-            className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-lg shadow-primary/20"
+            className="btn-cta px-6 py-2.5 text-sm"
           >
-            Bestill synsprøve
+            Bestill synstest
           </button>
         </div>
 
@@ -66,9 +66,9 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
           </a>
           <button
             onClick={() => { onBookClick(); setMenuOpen(false); }}
-            className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold"
+            className="w-full btn-cta py-3"
           >
-            Bestill synsprøve
+            Bestill synstest
           </button>
         </div>
       )}

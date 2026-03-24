@@ -39,6 +39,7 @@ const BookingForm = () => {
     e.preventDefault();
     if (isSubmitting.current) return;
     if (!validate()) return;
+    const normalizedPhone = phone.replace(/\D/g, "");
 
     if (!navigator.onLine) {
       toast({
@@ -56,7 +57,7 @@ const BookingForm = () => {
       await submitLead({
         name: name.trim(),
         birthdate: birthdate.trim(),
-        phone: phone.trim(),
+        phone: normalizedPhone,
         preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
         timestamp: new Date().toISOString(),
         source: "SmartLook Optikk – 40% kampanje",
@@ -114,9 +115,9 @@ const BookingForm = () => {
           inputMode="numeric"
           placeholder="Telefonnummer (8 siffer)"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 8))}
           className="h-12 bg-muted/50 border-border text-base text-foreground placeholder:text-muted-foreground"
-          maxLength={20}
+          maxLength={8}
         />
         {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone}</p>}
       </div>

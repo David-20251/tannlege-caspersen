@@ -39,8 +39,9 @@ Deno.serve(async (req) => {
 
   try {
     const payload = await req.json();
+    const normalizedPhone = String(payload.phone ?? '').replace(/\D/g, '');
 
-    if (!payload.phone || typeof payload.phone !== 'string' || payload.phone.replace(/\s/g, '').length < 8) {
+    if (normalizedPhone.length < 8) {
       return new Response(JSON.stringify({ error: 'Invalid phone' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -55,13 +56,23 @@ Deno.serve(async (req) => {
       });
     }
 
+    const forwardPayload = {
+      ...payload,
+      name: typeof payload.name === 'string' ? payload.name.trim() : '',
+      birthdate: typeof payload.birthdate === 'string' ? payload.birthdate.trim() : '',
+      phone: normalizedPhone,
+      preferred_date: typeof payload.preferred_date === 'string' ? payload.preferred_date : 'Ikke valgt',
+      timestamp: typeof payload.timestamp === 'string' ? payload.timestamp : new Date().toISOString(),
+      source: typeof payload.source === 'string' ? payload.source : 'SmartLook Optikk - 40% kampanje',
+    };
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
 
     const zapResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(forwardPayload),
       signal: controller.signal,
     });
 

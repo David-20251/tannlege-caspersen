@@ -96,7 +96,7 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
 
     {/* Floating badge */}
     <div className="absolute bottom-12 right-8 md:right-16 z-10 glass-card rounded-2xl px-5 py-4 shadow-lg float-medium hidden md:block">
-      <p className="text-sm font-bold text-foreground">⭐ 5.0 på Google</p>
+      <p className="text-sm font-bold text-foreground">⭐ 4.6 på Google</p>
       <p className="text-xs text-muted-foreground">Fornøyde kunder</p>
     </div>
   </section>

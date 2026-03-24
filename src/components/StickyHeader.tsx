@@ -34,7 +34,6 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
             <Phone className="w-4 h-4" />
             63 82 40 00
           </a>
-          </a>
           <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Mail className="w-4 h-4" />
             post@smartlookoptikk.no

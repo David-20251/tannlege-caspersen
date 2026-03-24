@@ -33,14 +33,13 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
-          Din lokale optiker
+          <span className="text-gradient">40% rabatt</span>
           <br />
-          <span className="text-gradient">på Sørumsand</span>
+          på alle brilleglass
         </h1>
 
         <p className="text-lg text-foreground/70 mb-10 max-w-lg leading-relaxed">
-          Bestill synstest og få ekspertråd fra autorisert optiker David Guldager.
-          Spar 40% på alle brilleglass ved kjøp av komplett brille.
+          Bestill synstest hos din lokale optiker på Sørumsand og spar stort ved kjøp av komplett brille.
         </p>
 
         <div className="flex flex-col sm:flex-row items-start gap-4">

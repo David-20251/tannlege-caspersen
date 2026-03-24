@@ -1,4 +1,4 @@
-import davidImg from "@/assets/david.jpg";
+import butikkImg from "@/assets/butikk.webp";
 import butikkImg from "@/assets/butikk.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 

@@ -27,7 +27,7 @@ const MeetOptician = () => {
               <p className="text-foreground/60 leading-relaxed">
                 Med avansert utstyr som OCT-A netthinneundersøkelse og moderne 
                 brilletilpasning, sørger David for at du får den beste synsopplevelsen. 
-                Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
+                Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass ved kjøp av en komplett brille</span>.
               </p>
             </div>
 

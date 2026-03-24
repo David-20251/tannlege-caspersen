@@ -1,4 +1,4 @@
-import butikkImg from "@/assets/butikk.webp";
+import davidImg from "@/assets/david.jpg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const MeetOptician = () => {

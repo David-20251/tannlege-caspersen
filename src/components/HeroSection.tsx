@@ -37,37 +37,37 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
 
           {/* Big arrow pointing directly at "40% rabatt" from the right */}
           <svg
-            className="absolute -right-2 -top-8 w-[90px] h-[50px] sm:-right-6 sm:top-0 sm:w-[140px] sm:h-[60px] md:-right-28 md:top-2 md:w-[220px] md:h-[80px] block pointer-events-none hero-arrow-container"
+            className="absolute -right-2 -top-10 w-[130px] h-[65px] sm:-right-6 sm:top-0 sm:w-[140px] sm:h-[60px] md:-right-28 md:top-2 md:w-[220px] md:h-[80px] block pointer-events-none hero-arrow-container"
             viewBox="0 0 220 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             {/* "Se her!" badge */}
-            <rect x="130" y="2" rx="8" ry="8" width="80" height="28" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
+            <rect x="120" y="0" rx="10" ry="10" width="96" height="32" fill="hsl(25, 95%, 53%)" className="hero-arrow-label-bg" />
             <text
-              x="170"
-              y="21"
+              x="168"
+              y="22"
               fill="white"
-              fontSize="14"
-              fontWeight="800"
+              fontSize="16"
+              fontWeight="900"
               fontFamily="Inter, sans-serif"
               textAnchor="middle"
               className="hero-arrow-label-1"
             >
               Se her!
             </text>
-            {/* Thick horizontal arrow pointing left toward the text */}
+            {/* Thick arrow pointing left */}
             <path
-              d="M170 32C160 42 120 50 60 48"
+              d="M168 34C158 44 120 52 60 50"
               stroke="hsl(25, 95%, 53%)"
-              strokeWidth="5"
+              strokeWidth="6"
               strokeLinecap="round"
               className="hero-arrow-path-1"
             />
             <path
-              d="M72 38L58 48L72 58"
+              d="M74 38L56 50L74 62"
               stroke="hsl(25, 95%, 53%)"
-              strokeWidth="5"
+              strokeWidth="6"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="hero-arrow-tip-1"

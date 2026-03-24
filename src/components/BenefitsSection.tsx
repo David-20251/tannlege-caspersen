@@ -45,37 +45,37 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
             <div className="relative glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
               {/* Big animated arrow pointing at "Spar 40%" */}
               <svg
-                className="absolute -left-4 -top-10 w-[100px] h-[90px] sm:-left-10 sm:-top-14 sm:w-[150px] sm:h-[130px] md:-left-24 md:-top-16 md:w-[200px] md:h-[160px] pointer-events-none block benefit-arrow-container"
+                className="absolute -left-2 -top-12 w-[130px] h-[110px] sm:-left-10 sm:-top-14 sm:w-[150px] sm:h-[130px] md:-left-24 md:-top-16 md:w-[200px] md:h-[160px] pointer-events-none block benefit-arrow-container"
                 viewBox="0 0 200 160"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* "Tilbud!" label — bigger, bolder */}
-                <rect x="2" y="2" rx="8" ry="8" width="72" height="30" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
+                {/* "Tilbud!" badge */}
+                <rect x="0" y="0" rx="10" ry="10" width="88" height="34" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
                 <text
-                  x="38"
-                  y="22"
+                  x="44"
+                  y="24"
                   fill="white"
-                  fontSize="15"
-                  fontWeight="800"
+                  fontSize="17"
+                  fontWeight="900"
                   fontFamily="Inter, sans-serif"
                   textAnchor="middle"
                   className="benefit-arrow-label"
                 >
                   Tilbud!
                 </text>
-                {/* Thicker curvy arrow path */}
+                {/* Thick curvy arrow */}
                 <path
-                  d="M38 34C50 50 80 60 110 70C135 78 155 95 155 120"
+                  d="M44 36C56 54 86 66 116 76C140 84 158 100 158 125"
                   stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="4"
+                  strokeWidth="5"
                   strokeLinecap="round"
                   className="benefit-arrow-path"
                 />
                 <path
-                  d="M145 112L155 124L165 112"
+                  d="M146 116L158 130L170 116"
                   stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="4"
+                  strokeWidth="5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="benefit-arrow-tip"

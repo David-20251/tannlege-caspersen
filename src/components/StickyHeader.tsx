@@ -30,9 +30,10 @@ const StickyHeader = ({ onBookClick }: StickyHeaderProps) => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="tel:48608939" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a href="tel:63824000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Phone className="w-4 h-4" />
-            48 60 89 39
+            63 82 40 00
+          </a>
           </a>
           <a href="mailto:post@smartlookoptikk.no" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             <Mail className="w-4 h-4" />

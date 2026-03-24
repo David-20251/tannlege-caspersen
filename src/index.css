@@ -175,31 +175,66 @@
   50% { transform: translateY(-12px) rotate(-1deg); }
 }
 
-@keyframes arrowDrawH {
-  from { stroke-dasharray: 0 100; }
-  to { stroke-dasharray: 100 0; }
+/* ── Hero arrow animations ── */
+@keyframes heroPathDraw {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
 }
 
-@keyframes arrowDrawCurve {
-  from { stroke-dasharray: 0 80; }
-  to { stroke-dasharray: 80 0; }
-}
-
-@keyframes arrowHead {
-  0%, 70% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes arrowHeadDelayed {
-  0%, 80% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes arrowFade {
-  0% { opacity: 0; }
+@keyframes heroTipReveal {
+  0%, 75% { opacity: 0; }
   100% { opacity: 1; }
 }
 
+@keyframes heroLabelReveal {
+  0%, 60% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroArrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.hero-arrow-path-1 {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: heroPathDraw 1.4s ease-out 0.5s forwards;
+}
+
+.hero-arrow-tip-1 {
+  opacity: 0;
+  animation: heroTipReveal 0.4s ease-out 1.8s forwards, heroArrowBounce 2s ease-in-out 2.2s infinite;
+}
+
+.hero-arrow-label-1 {
+  opacity: 0;
+  animation: heroLabelReveal 0.5s ease-out 1.6s forwards;
+}
+
+/* ── Benefits section arrow animations ── */
+@keyframes benefitPathDraw {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
+
+.benefit-arrow-path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: benefitPathDraw 1.4s ease-out 0.3s forwards;
+}
+
+.benefit-arrow-tip {
+  opacity: 0;
+  animation: heroTipReveal 0.4s ease-out 1.6s forwards, heroArrowBounce 2s ease-in-out 2s infinite;
+}
+
+.benefit-arrow-label {
+  opacity: 0;
+  animation: heroLabelReveal 0.5s ease-out 1.4s forwards;
+}
+
+/* ── Shared animations ── */
 @keyframes bounceSub {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -214,31 +249,6 @@
   0%, 90%, 100% { transform: scale(1); }
   93% { transform: scale(1.04); }
   96% { transform: scale(0.98); }
-}
-
-.animate-arrow-draw-h {
-  stroke-dasharray: 0 100;
-  animation: arrowDrawH 0.8s ease-out 0.3s forwards;
-}
-
-.animate-arrow-draw-curve {
-  stroke-dasharray: 0 80;
-  animation: arrowDrawCurve 0.8s ease-out 0.9s forwards;
-}
-
-.animate-arrow-head {
-  opacity: 0;
-  animation: arrowHead 0.4s ease-out 1s forwards;
-}
-
-.animate-arrow-head-delayed {
-  opacity: 0;
-  animation: arrowHeadDelayed 0.4s ease-out 1.6s forwards;
-}
-
-.animate-arrow-fade {
-  opacity: 0;
-  animation: arrowFade 0.3s ease-out 0.2s forwards;
 }
 
 .animate-bounce-subtle {

@@ -19,7 +19,7 @@ const VideoSection = () => {
               Trenger du nye briller?
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              Se hvordan vi hjelper deg med å finne de perfekte brillene – med 40% rabatt på alle brilleglass.
+              Få et innblikk i SmartLook Optikk sine tilbud og tjenester – akkurat nå med 40% rabatt på alle brilleglass.
             </p>
           </div>
 

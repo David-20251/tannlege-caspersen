@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
 import { Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const reviews = [
   {
@@ -19,26 +19,6 @@ const reviews = [
   },
 ];
 
-const useScrollReveal = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("section-fade-in");
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-};
-
 const Reviews = () => {
   const ref = useScrollReveal();
 
@@ -53,11 +33,10 @@ const Reviews = () => {
             </h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
-            {reviews.map((review, i) => (
+            {reviews.map((review) => (
               <div
                 key={review.name}
-                className="glass-card rounded-xl p-6 hover:border-primary/20 transition-all duration-300 group"
-                style={{ animationDelay: `${i * 100}ms` }}
+                className="glass-card rounded-xl p-6 hover:border-primary/20 transition-all duration-200"
               >
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => (

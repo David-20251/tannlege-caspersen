@@ -209,7 +209,7 @@ const Index = () => {
               <div className="glass-card rounded-xl p-6">
                 <MapPin className="w-5 h-5 text-primary mx-auto mb-3" />
                 <p className="font-semibold text-foreground mb-1">Besøk oss</p>
-                <a href="https://maps.google.com/?q=59.987272,11.246747" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a href="https://www.google.com/maps/search/?api=1&query=59.987272,11.246747" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                   Tverrveien 1, 1920 Sørumsand
                 </a>
               </div>

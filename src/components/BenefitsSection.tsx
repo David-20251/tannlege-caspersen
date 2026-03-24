@@ -45,7 +45,7 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
             <div className="relative glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
               {/* Big animated arrow pointing at "Spar 40%" */}
               <svg
-                className="absolute -left-10 md:-left-24 -top-14 md:-top-16 w-[150px] h-[130px] md:w-[200px] md:h-[160px] pointer-events-none hidden sm:block benefit-arrow-container"
+                className="absolute -left-4 -top-10 w-[100px] h-[90px] sm:-left-10 sm:-top-14 sm:w-[150px] sm:h-[130px] md:-left-24 md:-top-16 md:w-[200px] md:h-[160px] pointer-events-none block benefit-arrow-container"
                 viewBox="0 0 200 160"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

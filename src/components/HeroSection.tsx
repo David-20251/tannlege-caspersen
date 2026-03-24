@@ -37,7 +37,7 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
 
           {/* Big arrow pointing directly at "40% rabatt" from the right */}
           <svg
-            className="absolute -right-6 md:-right-28 top-0 md:top-2 w-[140px] h-[60px] md:w-[220px] md:h-[80px] hidden sm:block pointer-events-none hero-arrow-container"
+            className="absolute -right-2 -top-8 w-[90px] h-[50px] sm:-right-6 sm:top-0 sm:w-[140px] sm:h-[60px] md:-right-28 md:top-2 md:w-[220px] md:h-[80px] block pointer-events-none hero-arrow-container"
             viewBox="0 0 220 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

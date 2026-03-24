@@ -43,44 +43,7 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
 
             {/* Right: CTA card with arrow above */}
             <div className="flex flex-col items-center">
-              {/* Animated arrow — always centered above the card */}
-              <svg
-                className="w-[120px] h-[80px] sm:w-[160px] sm:h-[100px] md:w-[200px] md:h-[120px] pointer-events-none benefit-arrow-container mb-2"
-                viewBox="0 0 200 120"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* "Tilbud!" badge */}
-                <rect x="45" y="0" rx="12" ry="12" width="110" height="40" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
-                <text
-                  x="100"
-                  y="28"
-                  fill="white"
-                  fontSize="20"
-                  fontWeight="900"
-                  fontFamily="Inter, sans-serif"
-                  textAnchor="middle"
-                  className="benefit-arrow-label"
-                >
-                  Tilbud!
-                </text>
-                {/* Arrow pointing straight down */}
-                <path
-                  d="M100 42L100 95"
-                  stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  className="benefit-arrow-path"
-                />
-                <path
-                  d="M88 86L100 104L112 86"
-                  stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="benefit-arrow-tip"
-                />
-              </svg>
+              <AnimatedArrow label="Tilbud!" />
 
               <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent text-center w-full">
                 <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>

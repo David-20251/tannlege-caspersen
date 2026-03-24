@@ -42,21 +42,21 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
             </div>
 
             {/* Right: CTA card */}
-            <div className="relative glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
-              {/* Big animated arrow pointing at "Spar 40%" */}
+            <div className="relative glass-card rounded-2xl p-8 pt-16 sm:pt-8 md:p-10 md:pt-10 text-center glow-accent overflow-visible">
+              {/* Animated arrow - above card on mobile, floating top-left on desktop */}
               <svg
-                className="absolute -left-2 -top-12 w-[130px] h-[110px] sm:-left-10 sm:-top-14 sm:w-[150px] sm:h-[130px] md:-left-24 md:-top-16 md:w-[200px] md:h-[160px] pointer-events-none block benefit-arrow-container"
-                viewBox="0 0 200 160"
+                className="absolute left-1/2 -translate-x-1/2 -top-[70px] w-[160px] h-[80px] sm:left-auto sm:translate-x-0 sm:-left-12 sm:-top-16 sm:w-[180px] sm:h-[140px] md:-left-28 md:-top-20 md:w-[240px] md:h-[180px] pointer-events-none block benefit-arrow-container"
+                viewBox="0 0 240 180"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {/* "Tilbud!" badge */}
-                <rect x="0" y="0" rx="10" ry="10" width="88" height="34" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
+                <rect x="0" y="0" rx="12" ry="12" width="110" height="40" fill="hsl(25, 95%, 53%)" className="benefit-arrow-label-bg" />
                 <text
-                  x="44"
-                  y="24"
+                  x="55"
+                  y="28"
                   fill="white"
-                  fontSize="17"
+                  fontSize="20"
                   fontWeight="900"
                   fontFamily="Inter, sans-serif"
                   textAnchor="middle"
@@ -66,16 +66,16 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
                 </text>
                 {/* Thick curvy arrow */}
                 <path
-                  d="M44 36C56 54 86 66 116 76C140 84 158 100 158 125"
+                  d="M55 42C70 65 105 85 140 100C170 112 190 130 190 155"
                   stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="5"
+                  strokeWidth="6"
                   strokeLinecap="round"
                   className="benefit-arrow-path"
                 />
                 <path
-                  d="M146 116L158 130L170 116"
+                  d="M176 145L190 162L204 145"
                   stroke="hsl(25, 95%, 53%)"
-                  strokeWidth="5"
+                  strokeWidth="6"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="benefit-arrow-tip"

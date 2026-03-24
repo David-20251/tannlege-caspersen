@@ -1,26 +1,6 @@
-import { useEffect, useRef } from "react";
 import davidImg from "@/assets/david.jpg";
 import butikkImg from "@/assets/butikk.webp";
-
-const useScrollReveal = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("section-fade-in");
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-};
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const MeetOptician = () => {
   const ref = useScrollReveal();
@@ -39,13 +19,12 @@ const MeetOptician = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* David portrait */}
             <div className="relative group">
               <div className="overflow-hidden rounded-2xl">
                 <img
                   src={davidImg}
                   alt="David Guldager – autorisert optiker hos SmartLook Optikk"
-                  className="w-full h-[420px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
+                  className="w-full h-[420px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -54,7 +33,6 @@ const MeetOptician = () => {
               </div>
             </div>
 
-            {/* Text + store image */}
             <div className="space-y-6">
               <p className="text-foreground/80 text-lg leading-relaxed">
                 David Guldager er autorisert optiker med lang erfaring innen synsundersøkelser og øyehelse. 
@@ -67,12 +45,11 @@ const MeetOptician = () => {
                 Akkurat nå med <span className="text-primary font-semibold">40% rabatt på alle brilleglass</span>.
               </p>
 
-              {/* Store image */}
               <div className="overflow-hidden rounded-xl mt-4">
                 <img
                   src={butikkImg}
                   alt="SmartLook Optikk butikk på Sørumsand"
-                  className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-700"
+                  className="w-full h-48 object-cover hover:scale-[1.02] transition-transform duration-300"
                   loading="lazy"
                 />
                 <p className="text-xs text-muted-foreground mt-2 text-center">

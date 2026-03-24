@@ -27,20 +27,48 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
 
     <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
       <div className="max-w-xl animate-fade-up">
-        {/* Headline with arrow */}
+        {/* Headline */}
         <div className="relative">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.05] mb-6">
-            <span className="relative inline-block">
-              <span className="text-gradient animate-pulse-glow">40% rabatt</span>
-              {/* Arrow pointing to 40% rabatt from right */}
-              <svg className="absolute -right-14 top-1/2 -translate-y-1/2 w-12 h-10 hidden sm:block animate-arrow-fade" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46 20H8" stroke="hsl(25, 95%, 53%)" strokeWidth="2.5" strokeLinecap="round" className="animate-arrow-draw-h" />
-                <path d="M16 12L8 20L16 28" stroke="hsl(25, 95%, 53%)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-arrow-head" />
-              </svg>
-            </span>
+            <span className="text-gradient animate-pulse-glow">40% rabatt</span>
             <br />
             på alle brilleglass
           </h1>
+
+          {/* Big hand-drawn arrow curving toward "40% rabatt" from the right */}
+          <svg
+            className="absolute -right-8 md:-right-32 -top-6 md:-top-4 w-[120px] h-[100px] md:w-[180px] md:h-[140px] hidden sm:block pointer-events-none"
+            viewBox="0 0 180 140"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M170 20C140 10 100 8 70 30C50 45 40 65 45 85"
+              stroke="hsl(25, 95%, 53%)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              className="hero-arrow-path-1"
+            />
+            <path
+              d="M35 76L45 88L55 76"
+              stroke="hsl(25, 95%, 53%)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="hero-arrow-tip-1"
+            />
+            <text
+              x="110"
+              y="12"
+              fill="hsl(25, 95%, 53%)"
+              fontSize="13"
+              fontWeight="700"
+              fontFamily="Inter, sans-serif"
+              className="hero-arrow-label-1"
+            >
+              Se her!
+            </text>
+          </svg>
         </div>
 
         <p className="text-lg text-foreground/70 mb-10 max-w-lg leading-relaxed">
@@ -48,16 +76,9 @@ const HeroSection = ({ onBookClick }: HeroSectionProps) => (
         </p>
 
         <div className="flex flex-col sm:flex-row items-start gap-4 relative">
-          <div className="relative">
-            <button onClick={onBookClick} className="btn-cta px-8 py-4 text-lg animate-cta-attention">
-              Bestill synstest
-            </button>
-            {/* Arrow pointing down to CTA button from above-right */}
-            <svg className="absolute -top-10 right-[-3rem] w-12 h-10 hidden sm:block animate-arrow-fade" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ animationDelay: '0.6s' }}>
-              <path d="M40 4C32 10 24 20 24 32" stroke="hsl(25, 95%, 53%)" strokeWidth="2.5" strokeLinecap="round" className="animate-arrow-draw-curve" />
-              <path d="M18 26L24 32L30 26" stroke="hsl(25, 95%, 53%)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-arrow-head-delayed" />
-            </svg>
-          </div>
+          <button onClick={onBookClick} className="btn-cta px-8 py-4 text-lg animate-cta-attention">
+            Bestill synstest
+          </button>
           <a
             href="tel:48608939"
             className="flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-4 rounded-xl hover:bg-background/40 backdrop-blur-sm"

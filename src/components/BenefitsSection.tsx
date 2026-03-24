@@ -42,7 +42,42 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
             </div>
 
             {/* Right: CTA card */}
-            <div className="glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
+            <div className="relative glass-card rounded-2xl p-8 md:p-10 text-center glow-accent">
+              {/* Big animated arrow pointing at "Spar 40%" */}
+              <svg
+                className="absolute -left-8 md:-left-20 -top-10 md:-top-12 w-[120px] h-[100px] md:w-[160px] md:h-[120px] pointer-events-none hidden sm:block"
+                viewBox="0 0 160 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 15C50 5 100 10 130 40C145 55 148 75 140 95"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  className="benefit-arrow-path"
+                />
+                <path
+                  d="M130 88L140 98L150 88"
+                  stroke="hsl(25, 95%, 53%)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="benefit-arrow-tip"
+                />
+                <text
+                  x="5"
+                  y="12"
+                  fill="hsl(25, 95%, 53%)"
+                  fontSize="12"
+                  fontWeight="700"
+                  fontFamily="Inter, sans-serif"
+                  className="benefit-arrow-label"
+                >
+                  Tilbud!
+                </text>
+              </svg>
+
               <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder så lenge det varer.

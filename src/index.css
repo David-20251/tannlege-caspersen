@@ -82,10 +82,10 @@
   }
 
   .glass-card {
-    background: hsla(209, 80%, 16%, 0.7);
+    background: hsla(209, 50%, 22%, 0.7);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsla(209, 50%, 35%, 0.3);
+    border: 1px solid hsla(209, 40%, 38%, 0.3);
   }
 
   .glow-accent {

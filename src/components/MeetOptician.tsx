@@ -38,6 +38,9 @@ const MeetOptician = () => {
                 className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300"
                 loading="lazy"
               />
+              <p className="text-xs text-muted-foreground mt-2 text-center">
+                David Guldager – autorisert optiker
+              </p>
             </div>
           </div>
         </div>

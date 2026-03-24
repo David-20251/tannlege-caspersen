@@ -18,20 +18,7 @@ const MeetOptician = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative group">
-              <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={davidImg}
-                  alt="David Guldager – autorisert optiker hos SmartLook Optikk"
-                  className="w-full h-[420px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-3 bg-primary text-primary-foreground px-5 py-2 rounded-xl font-semibold text-sm shadow-lg">
-                Autorisert optiker
-              </div>
-            </div>
+          <div className="max-w-2xl mx-auto">
 
             <div className="space-y-6">
               <p className="text-foreground/80 text-lg leading-relaxed">

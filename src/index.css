@@ -82,18 +82,18 @@
   }
 
   .glass-card {
-    background: hsla(209, 50%, 22%, 0.7);
+    background: hsla(0, 0%, 100%, 0.7);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsla(209, 40%, 38%, 0.3);
+    border: 1px solid hsla(0, 0%, 75%, 0.4);
   }
 
   .glow-accent {
-    box-shadow: 0 0 40px hsla(24, 100%, 50%, 0.15), 0 0 80px hsla(24, 100%, 50%, 0.05);
+    box-shadow: 0 0 40px hsla(24, 100%, 50%, 0.12), 0 0 80px hsla(24, 100%, 50%, 0.04);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(0, 0%, 92%), hsl(24, 100%, 50%));
+    background: linear-gradient(135deg, hsl(211, 48%, 22%), hsl(24, 100%, 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

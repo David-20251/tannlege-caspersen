@@ -196,79 +196,63 @@
   50% { transform: translateY(-5px); }
 }
 
-.hero-arrow-container {
-  animation: benefitArrowSway 3s ease-in-out infinite;
-  transform-origin: top left;
-}
-
-.hero-arrow-path-1 {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: heroPathDraw 1.2s ease-out 0.5s forwards;
-}
-
-.hero-arrow-tip-1 {
-  opacity: 0;
-  animation: heroTipReveal 0.4s ease-out 1.6s forwards, heroArrowBounce 1.5s ease-in-out 2s infinite;
-}
-
-.hero-arrow-label-bg {
-  opacity: 0;
-  animation: heroLabelReveal 0.5s ease-out 1.2s forwards, benefitLabelBgPulse 2s ease-in-out 2s infinite;
-}
-
-.hero-arrow-label-badge {
-  opacity: 0;
-  animation: heroLabelReveal 0.5s ease-out 1.2s forwards, benefitLabelPulse 2s ease-in-out 2s infinite;
-}
-
-/* ── Benefits section arrow animations ── */
-@keyframes benefitPathDraw {
-  from { stroke-dashoffset: 200; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes benefitArrowSway {
+/* ── Shared animated arrow classes ── */
+@keyframes arrowSway {
   0%, 100% { transform: rotate(0deg) translateY(0); }
   25% { transform: rotate(1.5deg) translateY(-4px); }
   50% { transform: rotate(-1deg) translateY(2px); }
   75% { transform: rotate(1deg) translateY(-3px); }
 }
 
-@keyframes benefitLabelPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.9; }
+@keyframes arrowShaftDraw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
 }
 
-@keyframes benefitLabelBgPulse {
+@keyframes arrowTipReveal {
+  0%, 70% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes arrowBadgePulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.85; }
 }
 
-.benefit-arrow-container {
-  animation: benefitArrowSway 3s ease-in-out infinite;
-  transform-origin: top left;
+@keyframes arrowTextPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.9; }
 }
 
-.benefit-arrow-path {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: benefitPathDraw 1.4s ease-out 0.3s forwards;
+@keyframes arrowTipBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
-.benefit-arrow-tip {
+.animated-arrow-container {
+  animation: arrowSway 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animated-arrow-shaft {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: arrowShaftDraw 1s ease-out 0.4s forwards;
+}
+
+.animated-arrow-tip {
   opacity: 0;
-  animation: heroTipReveal 0.4s ease-out 1.6s forwards, heroArrowBounce 1.5s ease-in-out 2s infinite;
+  animation: arrowTipReveal 0.4s ease-out 1.3s forwards, arrowTipBounce 1.5s ease-in-out 1.8s infinite;
 }
 
-.benefit-arrow-label-bg {
+.animated-arrow-badge-bg {
   opacity: 0;
-  animation: heroLabelReveal 0.5s ease-out 1.2s forwards, benefitLabelBgPulse 2s ease-in-out 2s infinite;
+  animation: heroLabelReveal 0.5s ease-out 0.2s forwards, arrowBadgePulse 2s ease-in-out 1.5s infinite;
 }
 
-.benefit-arrow-label {
+.animated-arrow-badge-text {
   opacity: 0;
-  animation: heroLabelReveal 0.5s ease-out 1.2s forwards, benefitLabelPulse 2s ease-in-out 2s infinite;
+  animation: heroLabelReveal 0.5s ease-out 0.2s forwards, arrowTextPulse 2s ease-in-out 1.5s infinite;
 }
 
 /* ── Shared animations ── */

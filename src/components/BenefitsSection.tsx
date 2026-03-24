@@ -48,7 +48,7 @@ const BenefitsSection = ({ onBookClick }: BenefitsSectionProps) => {
               <div className="glass-card rounded-2xl p-8 md:p-10 glow-accent text-center w-full">
                 <h3 className="text-2xl font-extrabold text-foreground mb-3">Spar 40% på brilleglass</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder så lenge det varer.
+                  Bestill synsprøve i dag og få 40% rabatt på alle brilleglass ved kjøp av en komplett brille. Tilbudet gjelder t.o.m. 11. april 2026.
                 </p>
                 <button onClick={onBookClick} className="btn-cta px-8 py-4 text-lg w-full sm:w-auto">
                   Bestill synstest

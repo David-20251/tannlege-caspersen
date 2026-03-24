@@ -174,3 +174,51 @@
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-12px) rotate(-1deg); }
 }
+
+@keyframes arrowDraw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes arrowHead {
+  0%, 60% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bounceSub {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+@keyframes ctaAttention {
+  0%, 90%, 100% { transform: scale(1); }
+  93% { transform: scale(1.04); }
+  96% { transform: scale(0.98); }
+}
+
+.animate-arrow-draw {
+  stroke-dashoffset: 100;
+  animation: arrowDraw 1.2s ease-out 0.5s forwards;
+}
+
+.animate-arrow-head {
+  opacity: 0;
+  animation: arrowHead 0.4s ease-out 1.5s forwards;
+}
+
+.animate-bounce-subtle {
+  animation: bounceSub 2.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-cta-attention {
+  animation: ctaAttention 4s ease-in-out 2s infinite;
+}

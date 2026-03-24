@@ -52,9 +52,9 @@ const Index = () => {
             <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl mx-auto leading-relaxed">
               Bestill synsprøve og spar stort hos din lokale optiker.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-3">
               <button onClick={scrollToForm} className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200 shadow-xl shadow-primary/25 glow-accent">
-                Bestill synsprøve nå
+                Bestill time nå
               </button>
               <a href="tel:48608939" className="flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors duration-200 text-sm">
                 <Phone className="w-4 h-4" /> Ring 48 60 89 39

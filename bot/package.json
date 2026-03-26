@@ -1,0 +1,19 @@
+{
+  "name": "nychatgpt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:bot": "tsc -p tsconfig.json --outDir dist",
+    "start:bot": "node dist/lens-support-bot.js",
+    "index:smartlook": "node dist/site-indexer.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "typescript": "^5.6.3"
+  }
+}

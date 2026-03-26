@@ -2,6 +2,7 @@ import { useRef } from "react";
 import StickyHeader from "@/components/StickyHeader";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HeroSection from "@/components/HeroSection";
+import OfferBotWidget from "@/components/OfferBotWidget";
 import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import MeetOptician from "@/components/MeetOptician";
@@ -22,6 +23,7 @@ const Index = () => {
       <StickyMobileCTA onBookClick={scrollToForm} />
 
       <HeroSection onBookClick={scrollToForm} />
+      <OfferBotWidget onBookClick={scrollToForm} />
       <TrustBar />
       <ServicesSection />
       <MeetOptician />

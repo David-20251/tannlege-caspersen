@@ -21,16 +21,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 text-white" style={{ fontFamily: "'DM Serif Display', serif" }}>
-          Få et smil du <br />
-          faktisk er trygg på
-        </h1>
-
-        <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
-          Smertefri behandling med moderne teknologi — 25+ års erfaring
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={onBookClick}
             className="btn-cta px-12 py-4 text-lg font-bold shadow-lg hover:scale-105 transition-transform"
@@ -43,13 +34,6 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
           >
             Ring: 22 83 70 88
           </a>
-        </div>
-
-        {/* Trust signals */}
-        <div className="flex flex-col md:flex-row justify-center gap-6 text-white/80 text-sm">
-          <div>5,0 stjerner • 6 anmeldelser</div>
-          <div>25+ års erfaring</div>
-          <div>Same-day akutttimer</div>
         </div>
       </div>
     </section>

@@ -16,7 +16,6 @@ const BookingForm = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [name, setName] = useState("");
-  const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
   const [preferredDate, setPreferredDate] = useState<Date>();
   const [isLoading, setIsLoading] = useState(false);
@@ -27,8 +26,6 @@ const BookingForm = () => {
     const newErrors: Record<string, string> = {};
     if (!name.trim() || name.trim().split(/\s+/).length < 2)
       newErrors.name = "Vennligst fyll inn fornavn og etternavn";
-    if (!birthdate.trim() || !/^\d{6}$/.test(birthdate.trim()))
-      newErrors.birthdate = "Fyll inn fødselsdato med 6 siffer (f.eks. 261277)";
     if (!phone.trim() || !/^\d{8}$/.test(phone.replace(/\s/g, "")))
       newErrors.phone = "Vennligst fyll inn et gyldig 8-sifret telefonnummer";
     setErrors(newErrors);
@@ -56,19 +53,17 @@ const BookingForm = () => {
     try {
       await submitLead({
         name: name.trim(),
-        birthdate: birthdate.trim(),
         phone: normalizedPhone,
         preferred_date: preferredDate ? format(preferredDate, "yyyy-MM-dd") : "Ikke valgt",
         timestamp: new Date().toISOString(),
-        source: "SmartLook Optikk – 40% kampanje",
+        source: "Tannlege Caspersen – 50% kampanje",
       });
 
       trackEvent("Lead", {
-        source: "SmartLook Optikk – 40% kampanje",
+        source: "Tannlege Caspersen – 50% kampanje",
       });
 
       setName("");
-      setBirthdate("");
       setPhone("");
       setPreferredDate(undefined);
       navigate("/takk");
@@ -76,7 +71,7 @@ const BookingForm = () => {
       console.error("Error sending webhook:", error);
       toast({
         title: "Noe gikk galt",
-        description: "Vennligst prøv igjen eller ring oss på 63 82 40 00.",
+        description: "Vennligst prøv igjen eller ring oss på 22 83 70 88.",
         variant: "destructive",
       });
     } finally {
@@ -97,18 +92,7 @@ const BookingForm = () => {
         />
         {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
       </div>
-      <div className="input-focus rounded-lg">
-        <Input
-          type="text"
-          inputMode="numeric"
-          placeholder="Fødselsdato (ddmmåå, f.eks. 261277)"
-          value={birthdate}
-          onChange={(e) => setBirthdate(e.target.value.replace(/\D/g, "").slice(0, 6))}
-          className="h-12 bg-muted/50 border-border text-base text-foreground placeholder:text-muted-foreground"
-          maxLength={6}
-        />
-        {errors.birthdate && <p className="text-destructive text-sm mt-1">{errors.birthdate}</p>}
-      </div>
+
       <div className="input-focus rounded-lg">
         <Input
           type="tel"
@@ -147,7 +131,7 @@ const BookingForm = () => {
               disabled={(date) => {
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
-                return date < today || date.getDay() === 0;
+                return date < today || date.getDay() === 0 || date.getDay() === 6;
               }}
               initialFocus
               className={cn("p-3 pointer-events-auto")}
@@ -163,7 +147,7 @@ const BookingForm = () => {
         type="submit"
         size="lg"
         disabled={isLoading}
-        className="w-full h-14 text-lg font-semibold btn-cta"
+        className="w-full h-14 text-lg font-semibold btn-cta animate-cta-attention"
       >
         {isLoading ? (
           <>
@@ -171,23 +155,13 @@ const BookingForm = () => {
             Sender...
           </>
         ) : (
-          "Bestill time nå"
+          "Bestill time — 50% rabatt"
         )}
       </Button>
 
-      <div className="text-center pt-2">
-        <a
-          href="https://www.smartlookoptikk.no/bestill-synstest?single=true&current_optician=5176"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary transition-colors underline"
-        >
-          Eller bestill direkte på smartlookoptikk.no
-        </a>
-      </div>
-
       <p className="text-xs text-muted-foreground text-center leading-relaxed">
         Ved å sende inn skjemaet godtar du at vi kontakter deg for timebestilling.
+        Ingen binding.
       </p>
     </form>
   );

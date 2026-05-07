@@ -2,14 +2,15 @@ import { useRef } from "react";
 import StickyHeader from "@/components/StickyHeader";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HeroSection from "@/components/HeroSection";
-import OfferBotWidget from "@/components/OfferBotWidget";
+import CampaignBanner from "@/components/CampaignBanner";
 import TrustBar from "@/components/TrustBar";
+import FeaturesSection from "@/components/FeaturesSection";
 import ServicesSection from "@/components/ServicesSection";
 import MeetOptician from "@/components/MeetOptician";
 import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorks from "@/components/HowItWorks";
-import VideoSection from "@/components/VideoSection";
 import Reviews from "@/components/Reviews";
+import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -23,14 +24,15 @@ const Index = () => {
       <StickyMobileCTA onBookClick={scrollToForm} />
 
       <HeroSection onBookClick={scrollToForm} />
-      <OfferBotWidget onBookClick={scrollToForm} />
+      <CampaignBanner />
       <TrustBar />
+      <FeaturesSection />
       <ServicesSection />
       <MeetOptician />
       <BenefitsSection onBookClick={scrollToForm} />
       <HowItWorks />
-      <VideoSection />
       <Reviews />
+      <MapSection />
       <CTASection ref={formRef} />
       <Footer />
     </main>

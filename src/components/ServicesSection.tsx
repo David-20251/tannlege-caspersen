@@ -1,27 +1,62 @@
-import { Eye, Glasses, Scan, Droplets } from "lucide-react";
+import { AlertCircle, Search, Sparkles, Layers, RotateCcw, Scissors, Smile, Archive } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import octScan from "@/assets/oct-scan.png";
 
 const services = [
   {
-    icon: Eye,
-    title: "Synstest",
-    desc: "Grundig synsundersøkelse med høy nøyaktighet – tilpasset dine daglige behov og krav til førerkort.",
+    icon: AlertCircle,
+    title: "Akutthjelp",
+    desc: "Tannpine, brukket tann eller tapt fylling? Vi hjelper deg raskt. Kontakt oss for å få en akuttime.",
+    price: null,
+    highlight: true,
   },
   {
-    icon: Glasses,
-    title: "Briller",
-    desc: "Stort utvalg kvalitetsinnfatninger og glass fra ledende produsenter. Nå med 40% rabatt på glass.",
+    icon: Search,
+    title: "Undersøkelse & røntgen",
+    desc: "Grundig undersøkelse med digitale røntgenbilder og Airflow-rens. Grunnlaget for god tannhelse.",
+    price: "Fra 1 050 kr",
+    highlight: false,
   },
   {
-    icon: Scan,
-    title: "OCT netthinnescan",
-    desc: "Avansert Revo FC130 gir detaljerte bilder av netthinnen for tidlig oppdagelse av øyesykdommer.",
+    icon: Sparkles,
+    title: "Tannbleking",
+    desc: "Profesjonell bleking for en lysere, hvitere smil. Trygt og effektivt resultat.",
+    price: "2 400 kr / kjeve",
+    highlight: false,
   },
   {
-    icon: Droplets,
-    title: "Tørre øyne",
-    desc: "Analyse og anbefaling av lindrende tiltak for tørre, irriterte eller slitne øyne.",
+    icon: Layers,
+    title: "Porselensarbeider",
+    desc: "Facetter, kroner og broer i porselen — naturtro resultat med lang holdbarhet.",
+    price: "5 950 kr",
+    highlight: false,
+  },
+  {
+    icon: RotateCcw,
+    title: "Rotfylling",
+    desc: "Smertefri behandling ved infeksjon i tannnerven. Vi redder tenner som ellers ville bli trukket.",
+    price: null,
+    highlight: false,
+  },
+  {
+    icon: Smile,
+    title: "Fyllinger",
+    desc: "Komposittfyllinger i tannfarge — sterke, estetiske og holdbare erstatninger for amalgam.",
+    price: "850–1 450 kr",
+    highlight: false,
+  },
+  {
+    icon: Scissors,
+    title: "Tannekstraksjoner",
+    desc: "Smertefri fjerning av tenner når det er nødvendig, utført med omsorg og presisjon.",
+    price: null,
+    highlight: false,
+  },
+  {
+    icon: Archive,
+    title: "Proteser",
+    desc: "Helproteser og delproteser tilpasset deg — vi lager presise, komfortable løsninger.",
+    price: "Fra 10 000 kr",
+    highlight: false,
   },
 ];
 
@@ -34,45 +69,68 @@ const ServicesSection = () => {
         <div ref={ref} className="opacity-0">
           <div className="text-center mb-14">
             <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Tjenester</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-              Alt for din synshelse
+            <h2
+              className="text-3xl md:text-5xl text-foreground mb-4"
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 400 }}
+            >
+              Alt for din tannhelse
             </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              Fra akutthjelp til estetisk behandling — vi tar oss av deg i trygge hender.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
             {services.map((s) => (
               <div
                 key={s.title}
-                className="glass-card rounded-xl p-6 group cursor-default"
+                className={`card-3d group cursor-default ${s.highlight ? "lg:col-span-2" : ""}`}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors duration-200">
-                  <s.icon className="w-6 h-6 text-primary" />
+                <div
+                  className={`card-3d-inner glass-card rounded-2xl p-6 h-full depth-card ${
+                    s.highlight ? "shimmer-border" : ""
+                  }`}
+                >
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors duration-200 ${
+                      s.highlight
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-primary/10 group-hover:bg-primary/18"
+                    }`}
+                  >
+                    <s.icon className="w-6 h-6" style={s.highlight ? {} : { color: "hsl(196,75%,38%)" }} />
+                  </div>
+                  <h3
+                    className="font-bold text-foreground mb-2 text-lg"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  >
+                    {s.title}
+                    {s.highlight && (
+                      <span className="ml-2 text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                        Akutt
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
+                  {s.price && (
+                    <p className="text-sm font-semibold text-gradient-gold mt-auto">{s.price}</p>
+                  )}
                 </div>
-                <h3 className="font-bold text-foreground mb-2 text-lg">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Featured: OCT scan image */}
-          <div className="mt-10 glass-card rounded-2xl overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              <div className="img-hover">
-                <img
-                  src={octScan}
-                  alt="OCT-A netthinneundersøkelse – avansert skanning"
-                  className="w-full h-full min-h-[240px] object-cover"
-                  loading="lazy"
-                />
+          {/* Amalgam removal highlight */}
+          <div className="mt-8 glass-card shimmer-border rounded-2xl p-8 depth-card">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0">
+                <Sparkles className="w-8 h-8 text-primary" />
               </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Scan className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground mb-3 text-xl">OCT-A netthinneundersøkelse</h3>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold text-foreground mb-2">Amalgamfjerning</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Verdensledende Revo FC130 gir detaljerte tverrsnitt og blodstrømskart over netthinnen.
-                  Tidlig oppdagelse av øyesykdommer som glaukom og makuladegenerasjon.
+                  Vi bytter ut gamle amalgamfyllinger med moderne, tannfargede komposittfyllinger.
+                  Trygt utført etter gjeldende protokoll — for en mer estetisk og helsevennlig tannflate.
                 </p>
               </div>
             </div>

@@ -27,7 +27,6 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="text-2xl">🦷</div>
             <div className="font-bold text-foreground" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "18px" }}>
               Tannlege <span className="text-primary">Caspersen</span>
             </div>
@@ -69,7 +68,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
               </div>
             </div>
 
-            <Link to="/behandlinger#priser" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+            <Link to="/priser" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
               Priser
             </Link>
 
@@ -145,7 +144,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
               )}
             </div>
 
-            <Link to="/behandlinger#priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
+            <Link to="/priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
               Priser
             </Link>
 
@@ -160,7 +159,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
             {/* Mobile CTAs */}
             <div className="pt-4 space-y-2 border-t border-border/20">
               <a href="tel:22837088" className="block text-sm font-semibold text-primary py-2">
-                📞 22 83 70 88
+                22 83 70 88
               </a>
               <button
                 onClick={() => {

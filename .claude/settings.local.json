@@ -26,7 +26,10 @@
       "PowerShell(Get-Process | Where-Object {$_.ProcessName -eq \"node\"} | Stop-Process -Force -ErrorAction SilentlyContinue; Write-Host \"Done\")",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__mcp-registry__search_mcp_registry",
+      "WebFetch(domain:www.canva.com)",
+      "Bash(mkdir -p \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\" && cp \"D:\\\\David-IKKE-OCT\\\\tannlege caspersen\\\\caspersen_video.mp4\" \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\hero-video.mp4\" && ls -lh \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\\")"
     ]
   }
 }

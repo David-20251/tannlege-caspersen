@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import HeroV2 from "@/components/HeroV2";
+import HeroVideoSection from "@/components/HeroVideoSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesV2 from "@/components/ServicesV2";
@@ -23,8 +23,8 @@ const IndexV3 = () => {
       <NavbarProduction onBookClick={scrollToForm} />
       <StickyMobileCTA onBookClick={scrollToForm} />
 
-      {/* 1. HERO — Problem + Solution + CTA */}
-      <HeroV2 onBookClick={scrollToForm} />
+      {/* 1. HERO VIDEO — Full screen video with text overlay */}
+      <HeroVideoSection onBookClick={scrollToForm} />
 
       {/* 2. TRUST SIGNALS */}
       <section className="py-14 md:py-20 bg-primary/5 border-y border-border/30">

@@ -4,14 +4,14 @@ interface HeroVideoSectionProps {
 
 const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-screen h-screen flex items-center justify-center overflow-hidden -ml-[calc((100vw-100%)/2)]">
       {/* Video Background */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-screen h-screen object-cover"
       >
         <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>

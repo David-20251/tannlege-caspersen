@@ -11,15 +11,15 @@ const CTASection = forwardRef<HTMLDivElement>((_, ref) => {
         <div ref={revealRef} className="opacity-0">
           <div className="glass-card shimmer-border depth-card rounded-3xl p-8 md:p-12 glow-primary">
             <div className="text-center mb-8">
-              <span className="gold-badge mb-4">50% rabatt — første konsultasjon</span>
+              <span className="gold-badge mb-4">Gratis første konsultasjon for nye pasienter</span>
               <h2
                 className="text-3xl md:text-4xl text-foreground mt-5 mb-3"
                 style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 400 }}
               >
-                Bestill din time
+                Kom i gang i dag
               </h2>
               <p className="text-muted-foreground">
-                Fyll inn skjemaet, så ringer vi deg for å avtale tid.
+                Fyll inn skjemaet, så ringer vi deg for å avtale tid. Ingen forpliktelse.
               </p>
             </div>
             <BookingForm />

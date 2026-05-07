@@ -25,7 +25,8 @@
       "Bash(ls -la \"D:\\\\repos\\\\senja-oyehelse\\\\src\\\\components\\\\\" 2>/dev/null || ls -la \"D:/repos/senja-oyehelse/src/components/\" | head -20)",
       "PowerShell(Get-Process | Where-Object {$_.ProcessName -eq \"node\"} | Stop-Process -Force -ErrorAction SilentlyContinue; Write-Host \"Done\")",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

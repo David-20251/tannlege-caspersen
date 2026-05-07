@@ -5,24 +5,20 @@ interface ProblemSectionProps {
 const ProblemSection = ({ onBookClick }: ProblemSectionProps) => {
   const problems = [
     {
-      emoji: "😬",
       title: "Du er nervøs for tannlegen",
       desc: "Mange utsetter tannlegebesøk i årevis av frykt. Hos oss tar vi det på alvor — vi forklarer alt og setter eget tempo.",
     },
     {
-      emoji: "🦷",
       title: "Du har smerter eller tannpine",
       desc: "Tannpine som har vart for lenge? Vi ser på deg samme dag. Ingen skal lide unødvendig.",
     },
     {
-      emoji: "😔",
       title: "Du er ikke fornøyd med smilet ditt",
       desc: "Misfarging, skjeve tenner, eller hull? Vi finner løsningen som passer ditt budsjett og ønsker.",
     },
     {
-      emoji: "⏳",
       title: "Du har utsatt det lenge nok",
-      desc: "Jo lenger du venter, jo mer kostbart blir det. Book i dag og få 50% rabatt på første konsultasjon.",
+      desc: "Jo lenger du venter, jo mer kostbart blir det. Book i dag og få gratis første konsultasjon.",
     },
   ];
 
@@ -42,7 +38,6 @@ const ProblemSection = ({ onBookClick }: ProblemSectionProps) => {
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {problems.map((p) => (
             <div key={p.title} className="border border-background/10 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 bg-background/5 backdrop-blur">
-              <div className="text-4xl mb-4">{p.emoji}</div>
               <h3 className="text-xl font-bold mb-3 text-background">{p.title}</h3>
               <p className="text-background/60 leading-relaxed">{p.desc}</p>
             </div>

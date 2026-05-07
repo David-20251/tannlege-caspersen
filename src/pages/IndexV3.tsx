@@ -9,6 +9,7 @@ import TeamSection from "@/components/TeamSection";
 import AkuttSection from "@/components/AkuttSection";
 import ReviewCarouselTannlege from "@/components/ReviewCarouselTannlege";
 import FAQSection from "@/components/FAQSection";
+import PricingTiers from "@/components/PricingTiers";
 import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -60,10 +61,13 @@ const IndexV3 = () => {
       {/* 8. FAQ */}
       <FAQSection />
 
-      {/* 9. MAP + CONTACT */}
+      {/* 9. PRICING TIERS — Gratis + VIP */}
+      <PricingTiers />
+
+      {/* 10. MAP + CONTACT */}
       <MapSection />
 
-      {/* 10. FINAL CTA */}
+      {/* 11. FINAL CTA */}
       <CTASection ref={formRef} />
 
       {/* 11. FOOTER */}

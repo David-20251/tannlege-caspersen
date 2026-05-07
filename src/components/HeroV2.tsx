@@ -34,15 +34,12 @@ const HeroV2 = ({ onBookClick }: HeroV2Props) => {
         {/* Trust signals - minimal but powerful */}
         <div className="flex flex-col md:flex-row justify-center gap-8 mt-12 text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">⭐</span>
             <span className="font-semibold text-foreground">5,0 stjerner • 6 anmeldelser</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-2xl">✓</span>
             <span className="font-semibold text-foreground">25+ års erfaring</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🚨</span>
             <span className="font-semibold text-foreground">Same-day akutttimer</span>
           </div>
         </div>

@@ -57,7 +57,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
         </div>
 
         {/* Buttons section - side by side */}
-        <div className="w-full py-2 px-3 sm:px-6 flex justify-start">
+        <div className="w-full py-0 px-3 sm:px-6 flex justify-start">
           <div className="flex flex-row gap-3 w-full">
             <button
               onClick={onBookClick}

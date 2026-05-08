@@ -26,8 +26,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
 
   return (
     <section
-      className="relative w-full overflow-hidden h-screen min-h-[600px] max-h-[1000px]"
-      style={{ height: "100dvh" }}
+      className="relative w-full overflow-hidden h-[65vh] sm:h-[70vh] md:h-screen md:min-h-[600px] md:max-h-[1000px]"
     >
       {/* Poster — vises umiddelbart mens video laster */}
       <div

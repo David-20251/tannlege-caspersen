@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-const ContactFormSection = () => {
+interface ContactFormSectionProps {
+  inline?: boolean;
+}
+
+const ContactFormSection = ({ inline = false }: ContactFormSectionProps) => {
   const [formData, setFormData] = useState({
     navn: "",
     telefon: "",
@@ -59,6 +63,63 @@ const ContactFormSection = () => {
     }
   };
 
+  // Inline variant — brukt inni KontaktPage ved siden av kart
+  if (inline) {
+    return (
+      <div className="w-full">
+        {submitted && (
+          <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-lg text-primary text-center font-semibold">
+            ✓ Takk! Vi kontakter deg snart.
+          </div>
+        )}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="navn"
+            placeholder="Navn *"
+            value={formData.navn}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 rounded-lg border border-border/50 bg-white text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+          />
+          <input
+            type="tel"
+            name="telefon"
+            placeholder="Telefon *"
+            value={formData.telefon}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 rounded-lg border border-border/50 bg-white text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+          />
+          <input
+            type="email"
+            name="epost"
+            placeholder="E-postadresse"
+            value={formData.epost}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-lg border border-border/50 bg-white text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+          />
+          <textarea
+            name="melding"
+            placeholder="Melding — hva gjelder det?"
+            value={formData.melding}
+            onChange={handleChange}
+            rows={4}
+            className="w-full px-4 py-3 rounded-lg border border-border/50 bg-white text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 resize-none"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full btn-cta py-3 font-bold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? "Sender..." : "Send melding"}
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  // Standard variant — teal bakgrunn, brukt på toppen av Kontakt-siden
   return (
     <section className="w-full bg-primary py-12 md:py-16">
       <div className="max-w-2xl mx-auto px-6">
@@ -85,7 +146,6 @@ const ContactFormSection = () => {
             required
             className="w-full px-4 py-3 rounded bg-white text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-white/30"
           />
-
           <input
             type="tel"
             name="telefon"
@@ -95,7 +155,6 @@ const ContactFormSection = () => {
             required
             className="w-full px-4 py-3 rounded bg-white text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-white/30"
           />
-
           <input
             type="email"
             name="epost"
@@ -105,7 +164,6 @@ const ContactFormSection = () => {
             required
             className="w-full px-4 py-3 rounded bg-white text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-white/30"
           />
-
           <textarea
             name="melding"
             placeholder="Melding"
@@ -114,7 +172,6 @@ const ContactFormSection = () => {
             rows={4}
             className="w-full px-4 py-3 rounded bg-white text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-white/30 resize-none"
           />
-
           <button
             type="submit"
             disabled={loading}

@@ -56,7 +56,10 @@
       "Bash(grep -E \"\\\\.\\(jpg|png\\)$\")",
       "Bash(grep -E \"Tannlege.*\\\\.\\(jpg|png\\)$\")",
       "Bash(wget -O D:/repos/tannlege/public/test-akutt.jpg '--user-agent=Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' http://www.tannlegecaspersen.no/wp-content/uploads/2019/05/Tannlege_Caspersen_Akutt_hjelp.jpg)",
-      "Bash(curl -s -L -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' https://www.tannlegecaspersen.no/)"
+      "Bash(curl -s -L -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' https://www.tannlegecaspersen.no/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://tannlege-caspersen.vercel.app/images/Ansatt1-caspersen2-compressor.jpg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://tannlege-caspersen.vercel.app/images/Tannlege_Caspersen_Akutt_hjelp.jpg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://tannlege-caspersen.vercel.app/images/Tannlege_Caspersen_Undersokelse_diagnose.jpg)"
     ]
   }
 }

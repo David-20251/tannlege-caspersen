@@ -33,11 +33,16 @@ const UrgencyBanner = ({ onBookClick }: UrgencyBannerProps) => {
       const weekSeed = Math.floor(mondayDate.getTime() / (24 * 60 * 60 * 1000));
       const startingHours = 15 + (weekSeed % 6); // 15-20 hours
 
-      // Calculate total hours elapsed since Monday 00:00
-      const hoursSinceMonday = daysFromMonday * 24 + hourOfDay;
+      // Calculate hours booked per day (~3.5 hours per day on average)
+      // So by Friday we're mostly booked out, by Saturday completely
+      const hoursPerDay = startingHours / 5; // Distribute across 5 work days
+      const hoursBookedByDay = Math.floor(daysFromMonday * hoursPerDay);
 
-      // Calculate how many hours should be booked (roughly 2-3 per day)
-      const hoursBooked = Math.floor(hoursSinceMonday * 2.5);
+      // Add a small amount for time of day (a bit more booked as day progresses)
+      const hoursBookedByTime = Math.floor((hourOfDay / 24) * hoursPerDay);
+
+      // Total hours booked
+      const hoursBooked = hoursBookedByDay + hoursBookedByTime;
 
       // Calculate remaining
       const remaining = Math.max(0, startingHours - hoursBooked);

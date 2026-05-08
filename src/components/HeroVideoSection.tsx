@@ -13,7 +13,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden pt-[120px]">
       <div className="flex flex-col">
         {/* Video — sizes itself naturally, no fixed height */}
         <div className="relative w-full overflow-hidden">

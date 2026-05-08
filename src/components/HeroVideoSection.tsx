@@ -25,7 +25,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
   const objectPosition = isMobilePortrait ? "30% center" : "center center";
 
   return (
-    <section className="relative w-full bg-background overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       {/* Flexbox container for video + buttons */}
       <div className="flex flex-col">
         {/* Video section - takes proportional space */}

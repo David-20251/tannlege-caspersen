@@ -4,7 +4,6 @@ import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import HeroVideoSection from "@/components/HeroVideoSection";
-import HeroCTASection from "@/components/HeroCTASection";
 import UngtTilbudSection from "@/components/UngtTilbudSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
@@ -24,11 +23,8 @@ const IndexV3 = () => {
       <UrgencyBanner onBookClick={scrollToForm} />
       <StickyMobileCTA onBookClick={scrollToForm} />
 
-      {/* 1. HERO VIDEO — Full screen video with text overlay */}
-      <HeroVideoSection />
-
-      {/* 1.5. HERO CTA — Buttons below video */}
-      <HeroCTASection onBookClick={scrollToForm} />
+      {/* 1. HERO VIDEO — Full screen video with integrated CTA buttons */}
+      <HeroVideoSection onBookClick={scrollToForm} />
 
       {/* 2. UNGDOM TILBUD — 25% rabatt for under 30 */}
       <UngtTilbudSection onBookClick={scrollToForm} />

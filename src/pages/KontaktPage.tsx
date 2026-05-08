@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Phone, MapPin, Clock } from "lucide-react";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import FleksibeltBetalingSection from "@/components/FleksibeltBetalingSection";
@@ -94,68 +93,6 @@ const KontaktPage = () => {
         </div>
       </section>
 
-      {/* Contact Info Section */}
-      <section className="py-20 md:py-28 px-6 bg-white/50">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-          {/* Phone */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group hover:bg-primary/18 transition-colors">
-                <Phone className="w-6 h-6 text-primary" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-2">Ring oss</h3>
-            <p className="text-foreground/60 mb-4">Svar innen få minutter</p>
-            <a href="tel:22837088" className="text-primary font-bold text-lg hover:underline">
-              22 83 70 88
-            </a>
-          </div>
-
-          {/* Address */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group hover:bg-primary/18 transition-colors">
-                <MapPin className="w-6 h-6 text-primary" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-2">Adresse</h3>
-            <p className="text-foreground/60">
-              <div>Klingenberggata 5</div>
-              <div>0161 Oslo</div>
-            </p>
-          </div>
-
-          {/* Hours */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group hover:bg-primary/18 transition-colors">
-                <Clock className="w-6 h-6 text-primary" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-2">Åpningstider</h3>
-            <p className="text-foreground/60 space-y-1">
-              <div>Man–Fre: 08:00–16:00</div>
-              <div>Lørdag–Søndag: Stengt</div>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Before Flexible Payment */}
-      <section className="py-12 md:py-16 px-6 bg-gradient-to-r from-primary/10 to-accent/5 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Klar for et besøk?</h3>
-          <p className="text-foreground/70 mb-6">
-            Bestill time online eller ring oss for å finne en tid som passer deg.
-          </p>
-          <button
-            onClick={scrollToForm}
-            className="btn-cta px-8 py-3 text-base font-bold rounded-lg"
-          >
-            Bestill time nå
-          </button>
-        </div>
-      </section>
 
       {/* Flexible Payment Options */}
       <FleksibeltBetalingSection />

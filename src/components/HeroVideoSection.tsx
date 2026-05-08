@@ -54,22 +54,20 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
             <source src="/videos/hero-video.mp4" type="video/mp4" />
           </video>
 
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
         </div>
 
-        {/* Buttons section - flexes below video */}
-        <div className="w-full py-1 px-6 sm:px-10 flex justify-start">
-          <div className="flex flex-col gap-4 max-w-xs sm:max-w-sm">
+        {/* Buttons section - side by side */}
+        <div className="w-full py-2 px-3 sm:px-6 flex justify-start">
+          <div className="flex flex-row gap-3 w-full">
             <button
               onClick={onBookClick}
-              className="btn-cta w-full py-4 text-base sm:text-lg font-bold shadow-lg hover:scale-105 transition-transform"
+              className="btn-cta flex-1 py-3 px-2 sm:px-4 text-base sm:text-lg font-bold shadow-lg hover:scale-105 transition-transform"
             >
               Gratis konsultasjon
             </button>
             <a
               href="tel:22837088"
-              className="border-2 border-primary text-primary w-full py-4 rounded-lg text-base sm:text-lg font-bold hover:bg-primary/5 transition-colors text-center"
+              className="border-2 border-primary text-primary flex-1 py-3 px-2 sm:px-4 rounded-lg text-base sm:text-lg font-bold hover:bg-primary/5 transition-colors text-center"
             >
               Ring: 22 83 70 88
             </a>

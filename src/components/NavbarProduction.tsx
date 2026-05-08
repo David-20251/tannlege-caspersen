@@ -109,7 +109,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-border/20 pt-4">
-            <Link to="/" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
+            <Link to="/" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
               Hjem
             </Link>
 
@@ -144,15 +144,15 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
               )}
             </div>
 
-            <Link to="/priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
+            <Link to="/priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
               Priser
             </Link>
 
-            <Link to="/#om-oss" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
+            <Link to="/om-oss" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
               Om oss
             </Link>
 
-            <Link to="/#kontakt" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2">
+            <Link to="/kontakt" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
               Kontakt
             </Link>
 

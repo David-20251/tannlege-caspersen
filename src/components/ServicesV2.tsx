@@ -8,37 +8,37 @@ const ServicesV2 = () => {
       title: "Undersøkelse",
       desc: "Moderne utstyr, digitale røntgen, grundig diagnose.",
       price: "Fra 1 050 kr",
-      image: "/images/Tannlege_Caspersen_Undersokelse_diagnose.jpg",
+      image: "/images/tc-undersokelse.jpg",
     },
     {
       title: "Tannrens",
       desc: "Profesjonell rens med Airflow. Grunnlag for god helse.",
       price: "Inkl. undersøkelse",
-      image: "/images/Tannlege_Caspersen_Kosmetisk_tannbehandling.jpg",
+      image: "/images/tc-tannrens.jpg",
     },
     {
       title: "Akutthjelp",
       desc: "Tannpine, brukket tann? Vi hjelper samme dag.",
       price: "Ring 22 83 70 88",
-      image: "/images/Tannlege_Caspersen_Akutt_hjelp.jpg",
+      image: "/images/tc-akutthjelp.jpg",
     },
     {
       title: "Tannbleking",
       desc: "Lysere smil på kort tid. Trygt og effektivt.",
       price: "2 400 kr",
-      image: "/images/Tannlege_Caspersen_Rotfylling.jpg",
+      image: "/images/tc-tannbleking.jpg",
     },
     {
       title: "Kroner & broer",
       desc: "Porselen i høy kvalitet. Naturtro resultat.",
       price: "Fra 5 950 kr",
-      image: "/images/Tannlege_Caspersen_Porselensfasader_kroner_broer.jpg",
+      image: "/images/tc-kroner-broer.jpg",
     },
     {
       title: "Fyllinger",
       desc: "Moderne kompositt som varer og ser naturlig ut.",
       price: "Fra 850 kr",
-      image: "/images/Tannlege_Caspersen_Kompositt_eller_plastfyllinger.jpg",
+      image: "/images/tc-fyllinger.jpg",
     },
   ];
 
@@ -139,7 +139,7 @@ const ServicesV2 = () => {
                   <img
                     src={s.image}
                     alt={s.title}
-                    className="w-full h-full object-contain object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
 

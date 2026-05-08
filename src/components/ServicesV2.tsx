@@ -135,11 +135,11 @@ const ServicesV2 = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 {/* Image — fixed height, centered */}
-                <div className="card-image w-full h-48 overflow-hidden bg-gray-100">
+                <div className="card-image w-full h-48 overflow-hidden bg-gray-50 flex items-center justify-center">
                   <img
                     src={s.image}
                     alt={s.title}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-contain object-center"
                   />
                 </div>
 

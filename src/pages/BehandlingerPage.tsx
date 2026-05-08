@@ -180,20 +180,12 @@ const BehandlingerPage = () => {
           <p className="text-lg text-foreground/60 mb-8">
             Ring oss eller bestill time online. Vi svarer innen få minutter.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:22837088"
-              className="btn-cta px-8 py-4 text-lg font-bold rounded-lg text-center"
-            >
-              📞 Ring 22 83 70 88
-            </a>
-            <button
-              onClick={scrollToForm}
-              className="border border-primary text-primary px-8 py-4 text-lg font-bold rounded-lg hover:bg-primary/5 transition-colors"
-            >
-              Bestill time online
-            </button>
-          </div>
+          <button
+            onClick={scrollToForm}
+            className="btn-cta px-8 py-4 text-lg font-bold rounded-lg"
+          >
+            Bestill time online
+          </button>
         </div>
       </section>
 

@@ -76,7 +76,7 @@ const AkutthjelPage = () => {
             <ul className="space-y-3 text-foreground/70">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">1</span>
-                <span><strong>Ring oss med en gang</strong> på 22 83 70 88. Vi setter av akutt tid samme dag.</span>
+                <span><strong>Ring oss med en gang</strong> (se nummeret nedenfor). Vi setter av akutt tid samme dag.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">2</span>

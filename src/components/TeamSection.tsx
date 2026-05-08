@@ -9,7 +9,7 @@ const team = [
   {
     name: "Wenche E. Sæther",
     role: "Tannpleier",
-    image: "/images/Ansatt2-caspersen-2-compressor.jpg",
+    image: "/images/Ansatt3-caspersen-2-compressor.jpg",
     bio: "Wenche er høyskoleutdannet tannpleier med spesialisering innen kariesdiagnostikk og behandling av tannkjøttbetennelse (periodontitt). Hun gjennomfører grundige tannrenser med Airflow og gir deg skreddersydd råd om munnhygiene og kosthold.",
     highlights: ["Kariesdiagnostikk", "Periodontitt-behandling", "Airflow-rens"],
   },

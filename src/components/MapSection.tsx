@@ -40,7 +40,7 @@ const MapSection = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ gridAutoRows: "minmax(0, 1fr)" }}>
               <div className="card-3d animate-text-reveal delay-100">
                 <div className="card-3d-inner glass-card rounded-2xl p-6 depth-card hover:border-primary/20 transition-all duration-300">
                   <Phone className="w-6 h-6 text-primary mb-3" />

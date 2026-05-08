@@ -49,8 +49,7 @@ const FleksibeltBetalingSection = () => {
               key={i}
               className="border border-border/50 rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all bg-white/50 backdrop-blur"
             >
-              <div className="text-5xl mb-4">{option.icon}</div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">{option.title}</h3>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">{option.title}</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed">{option.desc}</p>
               <p className="text-sm text-primary font-semibold">{option.detail}</p>
             </div>
@@ -68,7 +67,7 @@ const FleksibeltBetalingSection = () => {
             href="tel:22837088"
             className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
           >
-            📞 Ring 22 83 70 88
+            Ring 22 83 70 88
           </a>
         </div>
       </div>

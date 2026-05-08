@@ -38,7 +38,7 @@ const GoogleReviewsSection = () => {
             Hva pasientene sier
           </h2>
           <p className="text-lg text-foreground/60">
-            <span className="text-yellow-400">★★★★★</span> 4.9/5 fra over 200 Google-anmeldelser
+            4.9/5 fra over 200 Google-anmeldelser
           </p>
         </div>
 
@@ -49,11 +49,9 @@ const GoogleReviewsSection = () => {
               key={i}
               className="bg-white rounded-2xl p-6 border border-border/30 hover:shadow-lg hover:border-primary/30 transition-all"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(review.rating)].map((_, j) => (
-                  <span key={j} className="text-yellow-400">★</span>
-                ))}
+              {/* Rating */}
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-primary">{review.rating}.0/5</span>
               </div>
 
               {/* Review text */}

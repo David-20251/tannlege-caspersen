@@ -1,37 +1,31 @@
 const ServicesV2 = () => {
   const services = [
     {
-      emoji: "🔍",
       title: "Undersøkelse",
       desc: "Moderne utstyr, digitale røntgen, grundig diagnose.",
       price: "Fra 1 050 kr",
     },
     {
-      emoji: "🧹",
       title: "Tannrens",
       desc: "Profesjonell rens med Airflow. Grunnlag for god helse.",
       price: "Inkl. undersøkelse",
     },
     {
-      emoji: "🚨",
       title: "Akutthjelp",
       desc: "Tannpine, brukket tann? Vi hjelper samme dag.",
       price: "Ring 22 83 70 88",
     },
     {
-      emoji: "✨",
       title: "Tannbleking",
       desc: "Lysere smil på kort tid. Trygt og effektivt.",
       price: "2 400 kr",
     },
     {
-      emoji: "👑",
       title: "Kroner & broer",
       desc: "Porselen i høy kvalitet. Naturtro resultat.",
       price: "Fra 5 950 kr",
     },
     {
-      emoji: "💪",
       title: "Fyllinger",
       desc: "Moderne kompositt som varer og ser naturlig ut.",
       price: "Fra 850 kr",
@@ -58,7 +52,6 @@ const ServicesV2 = () => {
               key={s.title}
               className="border border-border/50 rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur"
             >
-              <div className="text-4xl mb-4">{s.emoji}</div>
               <h3 className="text-xl font-bold mb-2 text-foreground">{s.title}</h3>
               <p className="text-foreground/60 text-sm mb-4 leading-relaxed">{s.desc}</p>
               <p className="text-sm font-semibold text-primary">{s.price}</p>

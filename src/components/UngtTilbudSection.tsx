@@ -45,7 +45,6 @@ const UngtTilbudSection = ({ onBookClick }: UngtTilbudSectionProps) => {
 
           {/* Right: Highlight Box */}
           <div className="bg-white rounded-3xl p-8 md:p-10 border-2 border-primary/20 shadow-lg">
-            <div className="text-6xl mb-6">🎓</div>
             <p className="text-foreground/60 mb-4">
               <span className="text-5xl font-bold text-primary">25%</span>
               <br />

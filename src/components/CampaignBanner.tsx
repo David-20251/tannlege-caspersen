@@ -29,10 +29,10 @@ const CampaignBanner = () => {
             {/* Right: Trust stats with 3D effect */}
             <div className="space-y-5">
               {[
-                { icon: "🛡️", title: "Fullt trygg", desc: "Bedøvelse som virkelig virker" },
-                { icon: "⏱️", title: "God tid", desc: "Vi bruker tid på deg — ikke rush" },
-                { icon: "📋", title: "Transparens", desc: "Full forklaring før enhver behandling" },
-                { icon: "💪", title: "Erfaring", desc: "25+ år med tusenvis av fornøyde pasienter" },
+                { title: "Fullt trygg", desc: "Bedøvelse som virkelig virker" },
+                { title: "God tid", desc: "Vi bruker tid på deg — ikke rush" },
+                { title: "Transparens", desc: "Full forklaring før enhver behandling" },
+                { title: "Erfaring", desc: "25+ år med tusenvis av fornøyde pasienter" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -40,9 +40,7 @@ const CampaignBanner = () => {
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
                   <div className="card-3d-inner glass-card rounded-2xl p-6 depth-card hover:border-primary/30 transition-all duration-300">
-                    <div className="flex gap-4">
-                      <span className="text-3xl flex-shrink-0">{item.icon}</span>
-                      <div>
+                    <div>
                         <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
                         <p className="text-sm text-foreground/60">{item.desc}</p>
                       </div>

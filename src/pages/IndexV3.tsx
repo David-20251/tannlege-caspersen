@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HeroVideoSection from "@/components/HeroVideoSection";
+import UngtTilbudSection from "@/components/UngtTilbudSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesV2 from "@/components/ServicesV2";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -21,7 +23,10 @@ const IndexV3 = () => {
       {/* 1. HERO VIDEO — Full screen video with text overlay */}
       <HeroVideoSection onBookClick={scrollToForm} />
 
-      {/* 2. TRUST SIGNALS */}
+      {/* 2. UNGDOM TILBUD — 25% rabatt for under 30 */}
+      <UngtTilbudSection onBookClick={scrollToForm} />
+
+      {/* 3. TRUST SIGNALS */}
       <section className="py-14 md:py-20 bg-primary/5 border-y border-border/30">
         <div className="max-w-5xl mx-auto px-6">
           <TrustBadgesTannlege />
@@ -34,7 +39,10 @@ const IndexV3 = () => {
       {/* 4. SERVICES — 6 tjenester */}
       <ServicesV2 />
 
-      {/* 5. QUICK LINKS TO FULL PAGES */}
+      {/* 5. GOOGLE REVIEWS */}
+      <GoogleReviewsSection />
+
+      {/* 6. QUICK LINKS TO FULL PAGES */}
       <section className="py-20 md:py-28 px-6 bg-white/50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
@@ -77,7 +85,7 @@ const IndexV3 = () => {
         </div>
       </section>
 
-      {/* 6. FINAL CTA */}
+      {/* 7. FINAL CTA */}
       <CTASection ref={formRef} />
 
       {/* 11. FOOTER */}

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FleksibeltBetalingSection from "@/components/FleksibeltBetalingSection";
 import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -63,6 +64,9 @@ const KontaktPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Flexible Payment Options */}
+      <FleksibeltBetalingSection />
 
       {/* Map Section */}
       <section className="py-0">

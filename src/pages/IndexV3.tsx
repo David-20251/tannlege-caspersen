@@ -55,7 +55,6 @@ const IndexV3 = () => {
             {/* Team Link */}
             <Link to="/om-oss" className="group">
               <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
-                <div className="text-5xl mb-4">👥</div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Møt teamet</h3>
                 <p className="text-foreground/60 mb-4">Lær å kjenne Judith, Wenche og Heidi</p>
                 <span className="text-primary font-semibold flex items-center gap-2">
@@ -67,7 +66,6 @@ const IndexV3 = () => {
             {/* Prices Link */}
             <Link to="/priser" className="group">
               <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
-                <div className="text-5xl mb-4">💰</div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Priser</h3>
                 <p className="text-foreground/60 mb-4">Transparente og rettferdige priser</p>
                 <span className="text-primary font-semibold flex items-center gap-2">
@@ -79,7 +77,6 @@ const IndexV3 = () => {
             {/* Contact Link */}
             <Link to="/kontakt" className="group">
               <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
-                <div className="text-5xl mb-4">📍</div>
                 <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Kontakt</h3>
                 <p className="text-foreground/60 mb-4">Ring, skriv eller besøk oss</p>
                 <span className="text-primary font-semibold flex items-center gap-2">

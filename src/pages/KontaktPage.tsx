@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ContactFormSection from "@/components/ContactFormSection";
 import FleksibeltBetalingSection from "@/components/FleksibeltBetalingSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -13,6 +14,9 @@ const KontaktPage = () => {
     <main className="min-h-screen bg-background overflow-x-hidden">
       <NavbarProduction onBookClick={scrollToForm} />
       <StickyMobileCTA onBookClick={scrollToForm} />
+
+      {/* Contact Form Section */}
+      <ContactFormSection />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pb-28 px-6 bg-gradient-to-b from-primary/10 to-background">

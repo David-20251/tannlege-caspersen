@@ -12,12 +12,12 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
   const navigate = useNavigate();
 
   const treatments = [
-    { name: "Undersøkelse & røntgen", path: "/behandlinger#undersokelse" },
-    { name: "Tannbleking", path: "/behandlinger#bleking" },
-    { name: "Akutthjelp", path: "/behandlinger#akutt" },
-    { name: "Porselensarbeider", path: "/behandlinger#porselen" },
-    { name: "Rotfylling", path: "/behandlinger#rotfylling" },
-    { name: "Fyllinger", path: "/behandlinger#fyllinger" },
+    { name: "Undersøkelse & røntgen", path: "/behandlinger/undersokelse-rontgen" },
+    { name: "Tannbleking", path: "/behandlinger/tannbleking" },
+    { name: "Akutthjelp", path: "/behandlinger/akutthjelp" },
+    { name: "Porselensarbeider", path: "/behandlinger/porselen" },
+    { name: "Rotfylling", path: "/behandlinger/rotfylling" },
+    { name: "Fyllinger", path: "/behandlinger/fyllinger" },
   ];
 
   return (

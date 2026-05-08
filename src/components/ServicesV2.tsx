@@ -4,31 +4,37 @@ const ServicesV2 = () => {
       title: "Undersøkelse",
       desc: "Moderne utstyr, digitale røntgen, grundig diagnose.",
       price: "Fra 1 050 kr",
+      image: "/images/Tannlege_Caspersen_Undersokelse_diagnose.jpg",
     },
     {
       title: "Tannrens",
       desc: "Profesjonell rens med Airflow. Grunnlag for god helse.",
       price: "Inkl. undersøkelse",
+      image: "/images/Tannlege_Caspersen_Kosmetisk_tannbehandling.jpg",
     },
     {
       title: "Akutthjelp",
       desc: "Tannpine, brukket tann? Vi hjelper samme dag.",
       price: "Ring 22 83 70 88",
+      image: "/images/Tannlege_Caspersen_Akutt_hjelp.jpg",
     },
     {
       title: "Tannbleking",
       desc: "Lysere smil på kort tid. Trygt og effektivt.",
       price: "2 400 kr",
+      image: "/images/Tannlege_Caspersen_Kosmetisk_tannbehandling.jpg",
     },
     {
       title: "Kroner & broer",
       desc: "Porselen i høy kvalitet. Naturtro resultat.",
       price: "Fra 5 950 kr",
+      image: "/images/Tannlege_Caspersen_Porselensfasader_kroner_broer.jpg",
     },
     {
       title: "Fyllinger",
       desc: "Moderne kompositt som varer og ser naturlig ut.",
       price: "Fra 850 kr",
+      image: "/images/Tannlege_Caspersen_Kompositt_eller_plastfyllinger.jpg",
     },
   ];
 
@@ -50,11 +56,20 @@ const ServicesV2 = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="border border-border/50 rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur"
+              className="border border-border/50 rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur"
             >
-              <h3 className="text-xl font-bold mb-2 text-foreground">{s.title}</h3>
-              <p className="text-foreground/60 text-sm mb-4 leading-relaxed">{s.desc}</p>
-              <p className="text-sm font-semibold text-primary">{s.price}</p>
+              <div className="w-full h-40 overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-2 text-foreground">{s.title}</h3>
+                <p className="text-foreground/60 text-sm mb-4 leading-relaxed">{s.desc}</p>
+                <p className="text-sm font-semibold text-primary">{s.price}</p>
+              </div>
             </div>
           ))}
         </div>

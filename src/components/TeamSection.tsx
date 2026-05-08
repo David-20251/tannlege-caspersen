@@ -2,18 +2,21 @@ const team = [
   {
     name: "Judith Caspersen",
     role: "Tannlege",
+    image: "/images/Ansatt2-caspersen-2-compressor.jpg",
     bio: "Judith har drevet klinikken i Klingenberggata 5 i over 25 år. Med autorisasjon som allmennpraktiserende tannlege og et genuint ønske om å hjelpe, er hun kjent for sin ro, grundighet og evne til å gjøre selv nervøse pasienter trygge. Hun benytter The Wand — en teknologi som gir smertefri bedøvelse.",
     highlights: ["25+ år erfaring", "Smertefri bedøvelse", "The Wand-teknologi"],
   },
   {
     name: "Wenche E. Sæther",
     role: "Tannpleier",
+    image: "/images/Ansatt1-caspersen2-compressor.jpg",
     bio: "Wenche er høyskoleutdannet tannpleier med spesialisering innen kariesdiagnostikk og behandling av tannkjøttbetennelse (periodontitt). Hun gjennomfører grundige tannrenser med Airflow og gir deg skreddersydd råd om munnhygiene og kosthold.",
     highlights: ["Kariesdiagnostikk", "Periodontitt-behandling", "Airflow-rens"],
   },
   {
     name: "Heidi Hande",
     role: "Tannlegeassistent",
+    image: "/images/Ansatt3-caspersen-2-compressor.jpg",
     bio: "Heidi sørger for at klinikken går smidig og at du som pasient føler deg ivaretatt fra du ankommer til du går. Med sin varme og profesjonelle fremtoning er hun et trygt ansikt du alltid blir møtt av.",
     highlights: ["Pasientmottak", "Klinikk-koordinator", "Varm og profesjonell"],
   },
@@ -36,6 +39,11 @@ const TeamSection = () => (
         {team.map((member) => (
           <div key={member.name} className="bg-white rounded-2xl p-8 shadow-sm border border-border/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
             <div className="text-center mb-6">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-primary/20"
+              />
               <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
               <p className="text-primary font-semibold text-sm mt-1">{member.role}</p>
             </div>

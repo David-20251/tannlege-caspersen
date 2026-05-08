@@ -49,7 +49,14 @@
       "Bash(git commit -m 'Add SedertBehandlingSection component with modal for sedation dentistry information *)",
       "Bash(git commit -m 'Remove remaining emoji from Quick Links section in IndexV3 *)",
       "Bash(git commit -m 'Make UrgencyBanner dynamic with decreasing hours throughout the week *)",
-      "Bash(git commit -m 'Fix dynamic hours calculation in UrgencyBanner *)"
+      "Bash(git commit -m 'Fix dynamic hours calculation in UrgencyBanner *)",
+      "Bash(cp \"D:\\\\David-IKKE-OCT\\\\tannlege caspersen\\\\startside.png\" \"D:\\\\repos\\\\tannlege\\\\public\\\\og-image.png\")",
+      "Bash(git commit -m 'SPRINT 9: Replace OG image with professional smile photo for SMS preview *)",
+      "Bash(curl -s \"https://www.tannlegecaspersen.no/\")",
+      "Bash(grep -E \"\\\\.\\(jpg|png\\)$\")",
+      "Bash(grep -E \"Tannlege.*\\\\.\\(jpg|png\\)$\")",
+      "Bash(wget -O D:/repos/tannlege/public/test-akutt.jpg '--user-agent=Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' http://www.tannlegecaspersen.no/wp-content/uploads/2019/05/Tannlege_Caspersen_Akutt_hjelp.jpg)",
+      "Bash(curl -s -L -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' https://www.tannlegecaspersen.no/)"
     ]
   }
 }

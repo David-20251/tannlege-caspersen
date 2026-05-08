@@ -119,7 +119,7 @@ const OmOssPage = () => {
             Klar for å møte teamet?
           </h2>
           <p className="text-lg text-foreground/60 mb-8">
-            Ring oss eller bestill din første gratis konsultasjon i dag.
+            Ring oss eller book din premium konsultasjon i dag.
           </p>
           <button
             onClick={scrollToForm}

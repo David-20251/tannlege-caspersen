@@ -55,6 +55,11 @@ const KontaktPage = () => {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left: Text */}
             <div>
+              <img
+                src="/images/Tannlege_Caspersen_Akutt_hjelp.jpg"
+                alt="Akutt tannhjelp"
+                className="w-20 h-20 rounded-xl object-cover mb-4"
+              />
               <h2 className="text-4xl font-bold text-red-600 mb-3" style={{ fontFamily: "'DM Serif Display', serif" }}>
                 Akutt tannpine?
               </h2>

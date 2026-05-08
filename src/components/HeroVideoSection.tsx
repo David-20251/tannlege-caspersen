@@ -27,7 +27,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
   return (
     <section className="relative w-full bg-background overflow-hidden">
       {/* Flexbox container for video + buttons */}
-      <div className="flex flex-col min-h-screen sm:min-h-auto">
+      <div className="flex flex-col">
         {/* Video section - takes proportional space */}
         <div className="relative w-full h-[65vh] sm:h-[70vh] md:h-screen md:min-h-[600px] md:max-h-[1000px] overflow-hidden">
           {/* Poster — vises umiddelbart mens video laster */}
@@ -59,7 +59,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
         </div>
 
         {/* Buttons section - flexes below video */}
-        <div className="w-full py-4 md:py-6 lg:py-8 px-6 sm:px-10 bg-background flex justify-start">
+        <div className="w-full py-1 px-6 sm:px-10 flex justify-start">
           <div className="flex flex-col gap-4 max-w-xs sm:max-w-sm">
             <button
               onClick={onBookClick}

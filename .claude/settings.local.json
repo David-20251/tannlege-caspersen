@@ -45,7 +45,11 @@
       "Bash(git fetch *)",
       "Bash(git reset *)",
       "Bash(gh api *)",
-      "WebFetch(domain:dentio.com)"
+      "WebFetch(domain:dentio.com)",
+      "Bash(git commit -m 'Add SedertBehandlingSection component with modal for sedation dentistry information *)",
+      "Bash(git commit -m 'Remove remaining emoji from Quick Links section in IndexV3 *)",
+      "Bash(git commit -m 'Make UrgencyBanner dynamic with decreasing hours throughout the week *)",
+      "Bash(git commit -m 'Fix dynamic hours calculation in UrgencyBanner *)"
     ]
   }
 }

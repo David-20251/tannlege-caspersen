@@ -45,7 +45,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
         playsInline
         preload="metadata"
         onCanPlay={() => setVideoReady(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
         style={{ objectPosition }}

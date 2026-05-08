@@ -4,7 +4,7 @@ interface HeroCTASectionProps {
 
 const HeroCTASection = ({ onBookClick }: HeroCTASectionProps) => {
   return (
-    <section className="w-full py-8 md:py-12 lg:py-16 px-6 sm:px-10 bg-gradient-to-b from-black/50 to-background">
+    <section className="w-full py-4 md:py-6 lg:py-8 px-6 sm:px-10 bg-background">
       <div className="flex flex-col gap-4 w-full max-w-xs sm:max-w-sm">
         <button
           onClick={onBookClick}
@@ -14,7 +14,7 @@ const HeroCTASection = ({ onBookClick }: HeroCTASectionProps) => {
         </button>
         <a
           href="tel:22837088"
-          className="border-2 border-white text-white w-full py-4 rounded-lg text-base sm:text-lg font-bold hover:bg-white/10 transition-colors text-center"
+          className="border-2 border-primary text-primary w-full py-4 rounded-lg text-base sm:text-lg font-bold hover:bg-primary/5 transition-colors text-center"
         >
           Ring: 22 83 70 88
         </a>

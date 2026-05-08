@@ -2,14 +2,14 @@ const team = [
   {
     name: "Judith Caspersen",
     role: "Tannlege",
-    image: "/images/Ansatt2-caspersen-2-compressor.jpg",
+    image: "/images/Ansatt1-caspersen2-compressor.jpg",
     bio: "Judith har drevet klinikken i Klingenberggata 5 i over 25 år. Med autorisasjon som allmennpraktiserende tannlege og et genuint ønske om å hjelpe, er hun kjent for sin ro, grundighet og evne til å gjøre selv nervøse pasienter trygge. Hun benytter The Wand — en teknologi som gir smertefri bedøvelse.",
     highlights: ["25+ år erfaring", "Smertefri bedøvelse", "The Wand-teknologi"],
   },
   {
     name: "Wenche E. Sæther",
     role: "Tannpleier",
-    image: "/images/Ansatt1-caspersen2-compressor.jpg",
+    image: "/images/Ansatt2-caspersen-2-compressor.jpg",
     bio: "Wenche er høyskoleutdannet tannpleier med spesialisering innen kariesdiagnostikk og behandling av tannkjøttbetennelse (periodontitt). Hun gjennomfører grundige tannrenser med Airflow og gir deg skreddersydd råd om munnhygiene og kosthold.",
     highlights: ["Kariesdiagnostikk", "Periodontitt-behandling", "Airflow-rens"],
   },

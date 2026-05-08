@@ -32,10 +32,12 @@ const NavbarProduction = ({ onBookClick, onMenuToggle }: NavbarProductionProps) 
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="font-bold text-foreground" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "18px" }}>
-              Tannlege <span className="text-primary">Caspersen</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/Tannlege-Caspersen-logo-liten.png"
+              alt="Tannlege Caspersen"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

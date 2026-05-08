@@ -46,7 +46,7 @@ const HeroVideoSection = ({ onBookClick }: HeroVideoSectionProps) => {
               onClick={onBookClick}
               className="btn-cta flex-1 py-3 px-2 sm:px-4 text-base sm:text-lg font-bold shadow-lg hover:scale-105 transition-transform"
             >
-              Gratis konsultasjon
+              Book Premium Konsultasjon
             </button>
             <a
               href="tel:22837088"

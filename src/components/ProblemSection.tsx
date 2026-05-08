@@ -18,7 +18,7 @@ const ProblemSection = ({ onBookClick }: ProblemSectionProps) => {
     },
     {
       title: "Du har utsatt det lenge nok",
-      desc: "Jo lenger du venter, jo mer kostbart blir det. Book i dag og få gratis første konsultasjon.",
+      desc: "Jo lenger du venter, jo mer komplekst blir problemet. Tak kontakt i dag og få en profesjonell vurdering av dine behov.",
     },
   ];
 
@@ -52,7 +52,7 @@ const ProblemSection = ({ onBookClick }: ProblemSectionProps) => {
             onClick={onBookClick}
             className="bg-primary text-white font-bold px-12 py-5 rounded-lg text-lg hover:bg-primary/90 transition-colors hover:scale-105 transform duration-200"
           >
-            Bestill gratis konsultasjon →
+            Book Premium Konsultasjon →
           </button>
         </div>
       </div>

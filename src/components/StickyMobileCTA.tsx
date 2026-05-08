@@ -18,7 +18,7 @@ const StickyMobileCTA = ({ onBookClick }: StickyMobileCTAProps) => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3 bg-background/95 backdrop-blur-lg border-t border-border/50">
       <button onClick={onBookClick} className="w-full btn-cta py-3.5 text-base animate-cta-attention">
-        Gratis konsultasjon →
+        Book Premium Konsultasjon →
       </button>
     </div>
   );

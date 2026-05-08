@@ -4,7 +4,6 @@ import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import HeroVideoSection from "@/components/HeroVideoSection";
-import UngtTilbudSection from "@/components/UngtTilbudSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesV2 from "@/components/ServicesV2";
@@ -25,9 +24,6 @@ const IndexV3 = () => {
 
       {/* 1. HERO VIDEO — Full screen video with integrated CTA buttons */}
       <HeroVideoSection onBookClick={scrollToForm} />
-
-      {/* 2. UNGDOM TILBUD — 25% rabatt for under 30 */}
-      <UngtTilbudSection onBookClick={scrollToForm} />
 
       {/* 3. TRUST SIGNALS */}
       <section className="py-14 md:py-20 bg-primary/5 border-y border-border/30">

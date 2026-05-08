@@ -64,9 +64,9 @@ const UrgencyBanner = ({ onBookClick }: UrgencyBannerProps) => {
         <div className="flex items-center gap-3 flex-1">
           <span className="text-sm md:text-base font-semibold">
             {remainingHours > 0 ? (
-              <>Bare {remainingHours} ledige timer igjen denne uken — bestill nå!</>
+              <>Begrenset kapasitet — Bare {remainingHours} ledige timer igjen denne uken</>
             ) : (
-              <>Alle timer er booket denne uken. Bestill for neste uke!</>
+              <>Premium konsultasjoner for denne uken er booket — Book for neste uke</>
             )}
           </span>
         </div>
@@ -74,7 +74,7 @@ const UrgencyBanner = ({ onBookClick }: UrgencyBannerProps) => {
           onClick={onBookClick}
           className="bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
         >
-          Bestill nå
+          Book nå
         </button>
       </div>
     </div>

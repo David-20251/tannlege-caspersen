@@ -29,7 +29,22 @@
       "Bash(git push *)",
       "mcp__mcp-registry__search_mcp_registry",
       "WebFetch(domain:www.canva.com)",
-      "Bash(mkdir -p \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\" && cp \"D:\\\\David-IKKE-OCT\\\\tannlege caspersen\\\\caspersen_video.mp4\" \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\hero-video.mp4\" && ls -lh \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\\")"
+      "Bash(mkdir -p \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\" && cp \"D:\\\\David-IKKE-OCT\\\\tannlege caspersen\\\\caspersen_video.mp4\" \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\hero-video.mp4\" && ls -lh \"D:\\\\repos\\\\glass-tilbud\\\\.claude\\\\worktrees\\\\quizzical-wing-f9f541\\\\public\\\\videos\\\\\")",
+      "Bash(find ~ -maxdepth 3 -name \"tannlege-caspersen\" -type d 2>/dev/null | head -5)",
+      "Bash(ls \"D:\\\\repos\" | grep -i tannlege)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(Get-ChildItem -Force)",
+      "Bash(Select-Object Name)",
+      "Bash(gh repo *)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git fetch *)",
+      "Bash(git reset *)",
+      "Bash(gh api *)"
     ]
   }
 }

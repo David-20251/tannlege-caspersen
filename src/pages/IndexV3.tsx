@@ -1,16 +1,11 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import HeroVideoSection from "@/components/HeroVideoSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesV2 from "@/components/ServicesV2";
-import TeamSection from "@/components/TeamSection";
-import AkuttSection from "@/components/AkuttSection";
-import ReviewCarouselTannlege from "@/components/ReviewCarouselTannlege";
-import FAQSection from "@/components/FAQSection";
-import PricingTiers from "@/components/PricingTiers";
-import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -39,35 +34,50 @@ const IndexV3 = () => {
       {/* 4. SERVICES — 6 tjenester */}
       <ServicesV2 />
 
-      {/* 5. TEAM — Judith, Wenche, Heidi */}
-      <TeamSection />
+      {/* 5. QUICK LINKS TO FULL PAGES */}
+      <section className="py-20 md:py-28 px-6 bg-white/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Team Link */}
+            <Link to="/om-oss" className="group">
+              <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
+                <div className="text-5xl mb-4">👥</div>
+                <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Møt teamet</h3>
+                <p className="text-foreground/60 mb-4">Lær å kjenne Judith, Wenche og Heidi</p>
+                <span className="text-primary font-semibold flex items-center gap-2">
+                  Les mer →
+                </span>
+              </div>
+            </Link>
 
-      {/* 6. AKUTT — emergency highlight */}
-      <AkuttSection onBookClick={scrollToForm} />
+            {/* Prices Link */}
+            <Link to="/priser" className="group">
+              <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
+                <div className="text-5xl mb-4">💰</div>
+                <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Priser</h3>
+                <p className="text-foreground/60 mb-4">Transparente og rettferdige priser</p>
+                <span className="text-primary font-semibold flex items-center gap-2">
+                  Se prisene →
+                </span>
+              </div>
+            </Link>
 
-      {/* 7. REVIEWS — scrolling carousel 5,0 ⭐ */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-4">
-            <p className="text-primary text-sm font-bold uppercase tracking-widest mb-4">Pasientomtaler</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>
-              Hva pasientene sier
-            </h2>
+            {/* Contact Link */}
+            <Link to="/kontakt" className="group">
+              <div className="p-8 rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all bg-white">
+                <div className="text-5xl mb-4">📍</div>
+                <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Kontakt</h3>
+                <p className="text-foreground/60 mb-4">Ring, skriv eller besøk oss</p>
+                <span className="text-primary font-semibold flex items-center gap-2">
+                  Kontakt oss →
+                </span>
+              </div>
+            </Link>
           </div>
-          <ReviewCarouselTannlege />
         </div>
       </section>
 
-      {/* 8. FAQ */}
-      <FAQSection />
-
-      {/* 9. PRICING TIERS — Gratis + VIP */}
-      <PricingTiers />
-
-      {/* 10. MAP + CONTACT */}
-      <MapSection />
-
-      {/* 11. FINAL CTA */}
+      {/* 6. FINAL CTA */}
       <CTASection ref={formRef} />
 
       {/* 11. FOOTER */}

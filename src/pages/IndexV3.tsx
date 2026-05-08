@@ -2,11 +2,13 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import UrgencyBanner from "@/components/UrgencyBanner";
 import HeroVideoSection from "@/components/HeroVideoSection";
 import UngtTilbudSection from "@/components/UngtTilbudSection";
 import TrustBadgesTannlege from "@/components/TrustBadgesTannlege";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesV2 from "@/components/ServicesV2";
+import SedertBehandlingSection from "@/components/SedertBehandlingSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -18,6 +20,7 @@ const IndexV3 = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <NavbarProduction onBookClick={scrollToForm} />
+      <UrgencyBanner onBookClick={scrollToForm} />
       <StickyMobileCTA onBookClick={scrollToForm} />
 
       {/* 1. HERO VIDEO — Full screen video with text overlay */}
@@ -38,6 +41,9 @@ const IndexV3 = () => {
 
       {/* 4. SERVICES — 6 tjenester */}
       <ServicesV2 />
+
+      {/* 4.5. SEDERT BEHANDLING — For nervøse pasienter */}
+      <SedertBehandlingSection onBookClick={scrollToForm} />
 
       {/* 5. GOOGLE REVIEWS */}
       <GoogleReviewsSection />

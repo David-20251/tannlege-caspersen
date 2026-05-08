@@ -4,10 +4,16 @@ import { Menu, X, ChevronDown, Phone, Search } from "lucide-react";
 
 interface NavbarProductionProps {
   onBookClick: () => void;
+  onMenuToggle?: (isOpen: boolean) => void;
 }
 
-const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
+const NavbarProduction = ({ onBookClick, onMenuToggle }: NavbarProductionProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = (open: boolean) => {
+    setMenuOpen(open);
+    onMenuToggle?.(open);
+  };
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -98,7 +104,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => toggleMenu(!menuOpen)}
             className="md:hidden text-foreground p-2"
             aria-label="Meny"
           >
@@ -109,7 +115,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-border/20 pt-4">
-            <Link to="/" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
+            <Link to="/" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => toggleMenu(false)}>
               Hjem
             </Link>
 
@@ -128,7 +134,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
                       key={t.name}
                       to={t.path}
                       className="block text-xs text-foreground/60 hover:text-primary py-1"
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => toggleMenu(false)}
                     >
                       {t.name}
                     </Link>
@@ -136,7 +142,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
                   <Link
                     to="/behandlinger"
                     className="block text-xs font-semibold text-primary py-1"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => toggleMenu(false)}
                   >
                     Se alle →
                   </Link>
@@ -144,15 +150,15 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
               )}
             </div>
 
-            <Link to="/priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
+            <Link to="/priser" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => toggleMenu(false)}>
               Priser
             </Link>
 
-            <Link to="/om-oss" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
+            <Link to="/om-oss" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => toggleMenu(false)}>
               Om oss
             </Link>
 
-            <Link to="/kontakt" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => setMenuOpen(false)}>
+            <Link to="/kontakt" className="block text-sm font-medium text-foreground/70 hover:text-foreground py-2" onClick={() => toggleMenu(false)}>
               Kontakt
             </Link>
 
@@ -164,7 +170,7 @@ const NavbarProduction = ({ onBookClick }: NavbarProductionProps) => {
               <button
                 onClick={() => {
                   onBookClick();
-                  setMenuOpen(false);
+                  toggleMenu(false);
                 }}
                 className="w-full btn-cta px-6 py-3 text-sm font-bold rounded-lg"
               >

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarProduction from "@/components/NavbarProduction";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -14,12 +14,13 @@ import Footer from "@/components/Footer";
 
 const IndexV3 = () => {
   const formRef = useRef<HTMLDivElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
-      <NavbarProduction onBookClick={scrollToForm} />
-      <UrgencyBanner onBookClick={scrollToForm} />
+      <NavbarProduction onBookClick={scrollToForm} onMenuToggle={setMobileMenuOpen} />
+      {!mobileMenuOpen && <UrgencyBanner onBookClick={scrollToForm} />}
       <StickyMobileCTA onBookClick={scrollToForm} />
 
       {/* 1. HERO VIDEO — Full screen video with integrated CTA buttons */}

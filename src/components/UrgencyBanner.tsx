@@ -59,7 +59,7 @@ const UrgencyBanner = ({ onBookClick }: UrgencyBannerProps) => {
   }, []);
 
   return (
-    <div className="fixed top-16 left-0 right-0 z-40 bg-primary text-white py-3 px-6 shadow-lg">
+    <div className="fixed left-0 right-0 z-50 bg-primary text-white py-3 px-6 shadow-lg" style={{ top: "64px" }}>
       <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 flex-1">
           <span className="text-sm md:text-base font-semibold">

@@ -13,13 +13,6 @@ const team = [
     bio: "Wenche er høyskoleutdannet tannpleier med spesialisering innen kariesdiagnostikk og behandling av tannkjøttbetennelse (periodontitt). Hun gjennomfører grundige tannrenser med Airflow og gir deg skreddersydd råd om munnhygiene og kosthold.",
     highlights: ["Kariesdiagnostikk", "Periodontitt-behandling", "Airflow-rens"],
   },
-  {
-    name: "Heidi Hande",
-    role: "Tannlegeassistent",
-    image: "/images/Ansatt3-caspersen-2-compressor.jpg",
-    bio: "Heidi sørger for at klinikken går smidig og at du som pasient føler deg ivaretatt fra du ankommer til du går. Med sin varme og profesjonelle fremtoning er hun et trygt ansikt du alltid blir møtt av.",
-    highlights: ["Pasientmottak", "Klinikk-koordinator", "Varm og profesjonell"],
-  },
 ];
 
 const TeamSection = () => (
@@ -35,7 +28,7 @@ const TeamSection = () => (
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {team.map((member) => (
           <div key={member.name} className="bg-white rounded-2xl p-8 shadow-sm border border-border/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
             <div className="text-center mb-6">
